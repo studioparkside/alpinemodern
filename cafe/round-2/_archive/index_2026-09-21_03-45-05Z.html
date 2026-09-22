@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Alpine Modern — Round 2 Artwork</title>
+<style>
+/* ============================================================
+   PARKSIDE SYSTEM TOKENS v1 — START
+   This block is identical in every page built on the system.
+   To roll out a change, replace everything between the START
+   and END markers in each file. Nothing outside the markers
+   should be edited to change color, type scale, or spacing.
+   ============================================================ */
+:root{
+  /* Surfaces, warm cream family */
+  --ground:#E7E4DC;        /* page background, sits behind cards */
+  --card:#F6F4EE;          /* default card surface */
+  --card-bright:#FCFBF7;   /* hero rows, and reference image tiles */
+  --paper:#F5F2EA;         /* text on inverted surfaces */
+
+  /* Ink ramp */
+  --ink:#1C1B18;           /* 15.7:1 on card */
+  --ink-soft:#55524B;      /* 7.1:1 on card, body and secondary */
+  --ink-muted:#6E695F;     /* 5.0:1 on card, labels and captions. This is the
+                              lightest step that still reads as text, in every
+                              skin. A skin may change the value, never the
+                              meaning. Decorative greys get their own name. */
+
+  /* Hairlines, alpha so they sit on any surface */
+  --hairline:rgba(28,27,24,0.16);
+  --hairline-strong:rgba(28,27,24,0.85);
+  --hairline-light:rgba(245,242,234,0.28);
+
+  /* Neutral. White is a surface you choose, black is for judging only. */
+  --neutral-white:#FFFFFF;
+  --neutral-black:#000000;
+
+  /* Accents. One per page at most. Gold takes ink, blue takes white. */
+  --accent-gold:#F9BC15;   /* ink on gold, 10.0:1. Never white. */
+  --accent-blue:#2278CE;   /* white on blue, 4.5:1. Never ink. */
+
+  /* Header glass. The ground color at 58%, so the tint stays in family. */
+  --glass:rgba(231,228,220,0.58);
+  --glass-solid:rgba(231,228,220,0.95);
+
+  /* Geometry */
+  --radius:28px;
+  --radius-sm:14px;
+  --maxw:1120px;
+  --pad:clamp(12px,2vw,20px);
+  --cardpad:clamp(30px,5vw,72px);
+  --header-h:96px;
+
+  /* Type */
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Segoe UI",Helvetica,Arial,sans-serif;
+  --t-display:clamp(46px,8.5vw,108px);
+  --t-section:clamp(34px,5.2vw,66px);
+  --t-rail:32px;
+  --t-sub:29px;
+  --t-body:21px;
+  --t-small:18px;
+  --t-label:16px;
+}
+@media(max-width:760px){
+  :root{ --radius:22px; --radius-sm:12px; --header-h:68px; }
+}
+
+/* --- Dark. Follows the reader's system setting, no toggle. Structure is
+       unchanged, only the ground and the ink ramp swap. Dark runs neutral in
+       every skin, because a darkened cream reads as a stain rather than a
+       ground. --ink-muted stays the lightest step that still reads as text,
+       6.1:1 on --card here.
+
+       One thing this block cannot fix. --accent-gold takes ink, and ink is
+       white in dark mode, which is the pairing the system forbids. A page
+       using gold in dark mode has to hold a fixed dark foreground on the gold
+       itself rather than inheriting --ink. Blue is unaffected, it takes white
+       in both. --- */
+@media(prefers-color-scheme:dark){
+  :root{
+    /* Surfaces */
+    --ground:#0E0F10;
+    --card:#17181A;
+    --card-bright:#1C1E20;
+    --paper:#0E0F10;         /* text on inverted surfaces, so .card.rev flips */
+
+    /* Ink ramp */
+    --ink:#FFFFFF;
+    --ink-soft:#B0B3B6;      /* 8.4:1 on card */
+    --ink-muted:#94979A;     /* 6.1:1 on card */
+
+    /* Hairlines */
+    --hairline:rgba(255,255,255,0.18);
+    --hairline-strong:rgba(255,255,255,0.80);
+    --hairline-light:rgba(14,15,16,0.32);
+
+    --glass:rgba(14,15,16,0.66);
+    --glass-solid:rgba(14,15,16,0.96);
+  }
+}
+/* ============================================================
+   PARKSIDE SYSTEM TOKENS v1 — END
+   ============================================================ */
+
+/* ============================================================
+   PARKSIDE SYSTEM BASE v1 — START
+   Shared structure. Page-specific rules go below the END marker.
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ground);color:var(--ink);font-family:var(--font);
+  font-size:var(--t-body);line-height:1.55;-webkit-font-smoothing:antialiased;
+  letter-spacing:-0.005em;padding:var(--pad);
+  padding-top:calc(var(--header-h) + var(--pad));
+}
+a{color:inherit;text-decoration:none}
+
+.stack{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:var(--pad)}
+
+/* --- Fixed header. Sits over the page and blurs what passes beneath it.
+       Background is the ground color at 58%, so the tint stays in family. --- */
+.siteheader{
+  position:fixed;top:0;left:0;right:0;z-index:60;height:var(--header-h);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 34px;
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(26px) saturate(165%);
+  backdrop-filter:blur(26px) saturate(165%);
+  border-bottom:1px solid rgba(28,27,24,0.10);
+}
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  .siteheader{background:var(--glass-solid)}
+}
+.siteheader .sp-logo{height:22px;width:auto;display:block}
+@media(max-width:760px){
+  .siteheader{padding:0 18px}
+  .siteheader .sp-logo{height:17px}
+}
+
+/* --- Card, the only container --- */
+.card{background:var(--card);border-radius:var(--radius);padding:var(--cardpad)}
+.card.bright{background:var(--card-bright)}
+.card.white{background:var(--neutral-white)}
+.card.slim{padding:22px 36px}
+.card.rev{background:var(--ink);color:var(--paper)}
+.card.rev .label,.card.rev .muted{color:rgba(245,242,234,.62)}
+.card.rev .rows > div{border-color:var(--hairline-light)}
+.card.rev .rail-number{color:var(--paper)}
+.card.rev .pill{border-color:var(--hairline-light);color:var(--paper)}
+.card.rev .pill.solid{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+/* --- Type roles ---
+   Labels are sentence case at reading size. No tracked-out small caps
+   anywhere in the system, including above headlines. --- */
+.label{font-size:var(--t-label);letter-spacing:-.005em;color:var(--ink-muted);font-weight:600;line-height:1.3}
+.display{font-size:var(--t-display);line-height:1.0;font-weight:700;letter-spacing:-.035em}
+.section-head{font-size:var(--t-section);line-height:1.04;font-weight:700;letter-spacing:-.03em}
+.sub{font-size:var(--t-sub);line-height:1.2;font-weight:700;letter-spacing:-.025em}
+.body{font-size:var(--t-body);line-height:1.5;color:var(--ink-soft);max-width:64ch}
+.small{font-size:var(--t-small);line-height:1.5;color:var(--ink-soft);max-width:60ch}
+.muted{color:var(--ink-muted)}
+.mono-num{font-variant-numeric:tabular-nums}
+
+/* --- Pill --- */
+.pill{display:inline-block;font-size:15px;font-weight:600;letter-spacing:-.005em;
+  padding:8px 18px 7px;border-radius:30px;border:1px solid var(--hairline);color:var(--ink-soft);line-height:1.15}
+.pill.solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* Third tier, for metadata that sits in a pill row without claiming a place in
+   it. Dates, counts, versions. Drops the container rather than the contrast,
+   so it stays legible and still shares the row's padding and baseline. */
+.pill.meta{border-color:transparent;color:var(--ink-muted);font-weight:500;
+  font-variant-numeric:tabular-nums}
+.card.rev .pill.meta{border-color:transparent;color:rgba(245,242,234,.62)}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap}
+
+/* --- Numbered left rail --- */
+.section-grid{display:grid;grid-template-columns:56px 1fr;gap:24px;align-items:baseline}
+.rail-number{font-size:var(--t-rail);font-weight:400;letter-spacing:-.03em;line-height:1;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+  position:sticky;top:calc(var(--header-h) + 24px)}
+
+/* --- Hairline rows --- */
+.rows{display:flex;flex-direction:column}
+.rows > div{padding:19px 0;border-top:1px solid var(--hairline);display:grid;
+  grid-template-columns:1fr auto;gap:24px;align-items:baseline}
+.rows > div:first-child{border-top:1px solid var(--hairline-strong)}
+.rows.flat > div{grid-template-columns:1fr}
+.row-text{max-width:58ch;color:var(--ink-soft);font-size:var(--t-small)}
+
+/* --- Expanding block --- */
+details.block{border-top:1px solid var(--hairline);}
+details.block summary{list-style:none;cursor:pointer;padding:19px 0;display:flex;
+  justify-content:space-between;align-items:center;gap:20px;font-weight:600}
+details.block summary::-webkit-details-marker{display:none}
+details.block summary .tog{font-size:var(--t-label);letter-spacing:-.005em;color:var(--ink-muted)}
+details.block[open] summary .tog::after{content:" \2013"}
+details.block:not([open]) summary .tog::after{content:" +"}
+.block-body{padding:2px 0 26px;color:var(--ink-soft);font-size:var(--t-small);max-width:58ch}
+
+/* --- Process steps --- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.step{border-top:2px solid var(--hairline);padding-top:15px}
+.step.done{border-top-color:var(--hairline-strong)}
+.step.now{border-top-color:var(--accent-gold)}
+.step .no{font-size:17px;font-weight:600;letter-spacing:-.005em;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+.step h4{font-size:25px;font-weight:700;margin:10px 0 8px;letter-spacing:-.025em;line-height:1.1}
+.step p{font-size:17px;color:var(--ink-soft);line-height:1.45}
+
+/* --- Footer grid --- */
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fgrid .label{display:block;margin-bottom:12px}
+.fgrid .v{font-size:18px;line-height:1.6;color:var(--ink-soft)}
+.fbottom{display:flex;justify-content:space-between;margin-top:44px;font-size:var(--t-label);
+  letter-spacing:-.005em;color:var(--ink-muted)}
+
+/* --- Reference tile, mood boards.
+       Near-white so page warmth does not tint the example. --- */
+.tilegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:10px}
+.tile{position:relative;background:var(--card-bright);border:1px solid var(--hairline);
+  border-radius:var(--radius-sm);aspect-ratio:1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:contain;padding:14px}
+.tile figcaption{position:absolute;left:0;top:0;font-size:14px;font-weight:600;color:var(--ink-muted);
+  background:var(--card);border-right:1px solid var(--hairline);border-bottom:1px solid var(--hairline);
+  border-top-left-radius:var(--radius-sm);padding:6px 11px;font-variant-numeric:tabular-nums}
+.tile.ph{background:repeating-linear-gradient(135deg,#FCFBF7 0 9px,#F4F1E9 9px 18px);border-style:dashed}
+.tile.ph .phl{font-size:15px;color:var(--ink-muted);letter-spacing:-.005em}
+
+/* --- Swatch, mood boards.
+       Chip sits on pure neutral so the cream ground cannot skew it. --- */
+.swatchset{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sw{border:1px solid var(--hairline);border-radius:var(--radius-sm);overflow:hidden;background:var(--neutral-white)}
+.sw.on-black{background:var(--neutral-black);border-color:rgba(255,255,255,.22)}
+.sw .chip{height:118px;margin:16px 16px 0;border-radius:6px}
+.sw .m{padding:13px 16px 18px;font-size:15px;letter-spacing:-.005em;color:#6B6B6B;line-height:1.4}
+.sw .m b{display:block;font-size:18px;letter-spacing:-.015em;color:#111;margin-bottom:4px;font-weight:600}
+.sw.on-black .m{color:#9a9a9a}
+.sw.on-black .m b{color:#fff}
+/* ============================================================
+   PARKSIDE SYSTEM BASE v1 — END
+   ============================================================ */
+
+
+/* ---- Alpine Modern Round 2, page only ----
+   Neutral shell per system section 05. Client judges their own material,
+   so the page recedes. --- */
+:root{
+  --ground:#F1F1F0; --card:#FFFFFF; --card-bright:#FFFFFF; --paper:#FFFFFF;
+  --ink:#141414; --ink-soft:#5C5C5C; --ink-muted:#6A6A6A;
+  --hairline:rgba(20,20,20,0.13); --hairline-strong:rgba(20,20,20,0.82);
+  --glass:rgba(241,241,240,0.62); --glass-solid:rgba(241,241,240,0.96);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --ground:#0E0F10; --card:#17181A; --card-bright:#1C1E20; --paper:#0E0F10;
+    --ink:#FFFFFF; --ink-soft:#B0B3B6; --ink-muted:#94979A;
+    --hairline:rgba(255,255,255,0.18); --hairline-strong:rgba(255,255,255,0.80);
+    --glass:rgba(14,15,16,0.66); --glass-solid:rgba(14,15,16,0.96);
+  }
+}
+
+.colhead{display:grid;grid-template-columns:300px 1fr;gap:40px;
+  padding-bottom:13px;margin-top:34px}
+
+.item{display:grid;grid-template-columns:300px 1fr;gap:40px;
+  padding:28px 0;border-top:1px solid var(--hairline);align-items:start}
+.item:first-of-type{border-top:1px solid var(--hairline-strong)}
+.iname{font-size:24px;font-weight:700;letter-spacing:-.025em;line-height:1.2}
+.icolor{font-size:17px;color:var(--ink-muted);line-height:1.45;margin-top:7px}
+.ileft .pill{margin-top:13px;font-size:14px;padding:6px 14px 5px}
+.iart{font-size:var(--t-small);color:var(--ink-soft);line-height:1.5;max-width:58ch}
+.itemnote{font-size:17px;color:var(--ink-muted);line-height:1.5;
+  max-width:58ch;margin-top:12px;padding-top:12px;border-top:1px solid var(--hairline)}
+
+.headnote{display:flex;gap:40px;flex-wrap:wrap;margin-top:34px}
+.headnote > div{flex:1 1 260px}
+.headnote .v{font-size:19px;color:var(--ink-soft);line-height:1.5;margin-top:9px}
+
+@media(max-width:860px){
+  .colhead{display:none}
+  .item{grid-template-columns:1fr;gap:14px}
+  .iname{font-size:21px}
+}
+@media print{
+  .item{break-inside:avoid;grid-template-columns:230px 1fr;gap:24px}
+  .colhead{grid-template-columns:230px 1fr;gap:24px}
+}
+
+
+/* ============================================================
+   PARKSIDE SYSTEM PRINT v1 — START
+   Proposals get saved as PDFs after approval. Cream grounds
+   either lay down a full page of ink or get dropped by the
+   printer, and dropped grounds leave the alpha hairlines with
+   nothing to sit on. This flattens to white and darkens the
+   rules so the structure survives.
+   ============================================================ */
+@media print{
+  :root{
+    --ground:#FFFFFF; --card:#FFFFFF; --card-bright:#FFFFFF; --paper:#FFFFFF;
+    --hairline:rgba(0,0,0,0.28); --hairline-strong:rgba(0,0,0,0.85);
+    --ink:#000000; --ink-soft:#2B2B2B; --ink-muted:#4A4A4A;
+    --glass:#FFFFFF; --glass-solid:#FFFFFF;
+    --radius:0; --radius-sm:0; --cardpad:0;
+    --t-body:11.5pt; --t-small:10.5pt; --t-label:10pt;
+    --t-display:36pt; --t-section:23pt; --t-rail:20pt; --t-sub:15pt;
+  }
+  body{background:#fff;padding:0;padding-top:0;font-size:11.5pt;line-height:1.45}
+  .siteheader{position:static;height:auto;background:#fff;backdrop-filter:none;
+    -webkit-backdrop-filter:none;border-bottom:1.5pt solid #000;padding:0 0 10pt;margin-bottom:16pt}
+  .siteheader .sp-logo{height:15pt}
+  .rail-number{position:static}
+  .card.white{background:#fff}
+  .speclabel{font-size:14pt;margin:24pt 0 10pt}
+  .note{font-size:9.5pt}
+  .step h4{font-size:13pt} .step p,.step .no{font-size:10pt}
+  .fgrid .v{font-size:10.5pt}
+  .pill{font-size:9pt;padding:4px 11px 3px}
+  .sw .m{font-size:9pt} .sw .m b{font-size:10.5pt}
+  .stack{max-width:none;gap:0}
+  .card{padding:0 0 22pt;border-radius:0;break-inside:avoid}
+  .card.rev{background:#fff;color:#000;border:1.5pt solid #000;padding:14pt;break-inside:avoid}
+  .card.rev .label,.card.rev .muted{color:#4A4A4A}
+  .card.rev .pill.solid{background:#000;color:#fff}
+  .siteheader{background:#fff;border-bottom:1.5pt solid #000;border-radius:0;padding:0 0 12pt}
+  .rail-number{color:#000}
+  .tile,.sw{break-inside:avoid}
+  details.block{border-top:1px solid rgba(0,0,0,.28)}
+  details.block .block-body{display:block !important}
+  details.block summary .tog{display:none}
+  .step,.rows > div,.scale-row,.copyblock{break-inside:avoid}
+  h1,h2,h3,h4,.display,.section-head,.sub{break-after:avoid}
+  .no-print{display:none !important}
+  @page{margin:14mm}
+}
+/* ============================================================
+   PARKSIDE SYSTEM PRINT v1 — END
+   ============================================================ */
+</style>
+</head>
+<body id="top">
+
+<header class="siteheader">
+  <a href="#top" aria-label="Studio Parkside"><svg class="sp-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 379 152">
+    <path d="M227,121l-5-1.3c-6.1-1.6-9.5-3.1-9.5-7s3.4-6.8,8.7-6.8,7.9,3.1,8.3,8.8h13.3c-1.1-8.2-9.3-13.3-21.6-13.3s-21.2,6.4-21.2,15.5,4.4,11.6,15,14.2l4.9,1.2c7.5,1.8,10.7,4.2,10.7,8s-3.7,6.9-9.7,6.9-9-3.8-9.4-10.5h-13.5c1.2,9.6,9.3,14.8,22.9,14.8s22.5-5,22.5-16.1-6.3-11.9-16.6-14.5Z"/>
+    <path d="M128.3,124.5c0-7.2,3-10.8,9.1-10.8s4.5.2,7.2.6v-11.7c-.9,0-1.9-.1-2.7-.1-4.5,0-7.8,1.8-10.3,5.6-1.4,2-2.3,4.1-2.9,6.2,0,.3-.3.4-.6.4-.3,0-.5-.3-.5-.6v-11.5h-14.2v47.8h14.8v-26Z"/>
+    <path d="M92.3,142.7c.2,0,.4.3.4.5l.4,7.2h13.5l-.2-3.9c-.2-3-.3-4.9-.3-6.1v-19.5c.1-5.8-1.5-10.4-4.6-13.6-3.8-3.8-9.8-5.7-17.9-5.7-12,0-21.2,6.1-22.5,15h13.7c.4-6.9,3.5-10.7,8.8-10.7s8.3,3.6,8.3,11.2v2.8c0,.3-.2.5-.5.6l-9,1.5c-17,3-23.1,7.1-23.1,16s8.9,13.4,16.6,13.4,12.5-2.9,15.9-8.5c.1-.2.4-.3.6-.3ZM81.8,144.7c-4.7,0-7.8-3.2-7.8-8.2s5.3-9.8,17.3-10.9c.2,0,.3,0,.4.1.1.1.2.3.2.4v4.3c0,9.7-5.2,14.1-10.1,14.1Z"/>
+    <path d="M370.1,135.9c-1.8,6.1-6.8,9.7-13.3,9.7s-13.5-7-13.5-18.7.3-.6.6-.6h33.7v-1.4c0-13.8-10.2-23.4-24.9-23.4s-25.2,8.7-25.2,24.8,13.4,25.1,26.7,25.1,20.7-5.8,23.2-15.6h-7.3ZM352.6,106c2.3,0,4.2.7,5.6,2.2,2.3,2.4,3.4,6.5,3.4,12.8,0,.3-.3.6-.6.6h-17.1c-.2,0-.3,0-.4-.2-.1-.1-.2-.3-.2-.4.2-9.9,3.3-14.9,9.3-14.9Z"/>
+    <path d="M28.2,84.2H4.9v66.2h16.1v-25.4c0-.3.3-.6.6-.6h6.6c14,0,30.8-3.5,30.8-20.4s-10.4-19.8-30.8-19.8ZM27.5,119.1h-5.9c-.3,0-.6-.3-.6-.6v-28.3c0-.3.3-.6.6-.6h5.9c9.2,0,14.5,5.3,14.5,14.5s-5.2,14.9-14.5,14.9Z"/>
+    <rect x="249.2" y="102.6" width="14.8" height="47.8"/>
+    <path d="M321.8,150.4v-68.1h-14.8v25.7c0,.2-.2.5-.4.5-.2,0-.5,0-.6-.2-3.2-4.5-8.1-6.8-14.6-6.8-13.1,0-21.6,9.7-21.6,24.7s8.3,25.2,21.7,25.2,12-2.9,15.3-8.5c.1-.2.4-.3.6-.3.2,0,.4.3.4.6v7.1h14.1ZM296.2,145c-6.8,0-10.2-6.3-10.2-18.8s3.4-18.3,10.1-18.3,11.2,7.5,11.2,18.3-4.7,18.8-11.2,18.8Z"/>
+    <g>
+      <rect x="214.6" y=".5" width="15.4" height="12.1"/>
+      <path d="M69,11.3v8.9c0,.3-.3.6-.6.6h-7.2v4.9h7.2c.3,0,.6.3.6.6v30.5c0,8.8,3.8,11.9,14.4,11.9s7.9,0,11.3-.2v-4.7h-4.7c-4.1,0-6.2-1-6.2-6.5v-31c0-.3.4-.6.7-.6h10.3v-4.9h-10.3c-.3,0-.6-.3-.6-.6V5.9l-14.8,5.4Z"/>
+      <path d="M147,68.6V20.8h-14.8v24.3c0,11.2-3.7,17.9-9.9,17.9s-7.4-1.4-7.4-10.5v-31.8h-14.8v30c0,11.9,6.1,18.8,16.8,18.8s12.2-3,15-8.3c.1-.2.4-.4.6-.3.3,0,.4.3.4.6v7.1h14.1Z"/>
+      <path d="M0,49.5c1.6,12.8,12.3,20.1,29.4,20.1s28.2-11.1,28.2-21.4-10.3-16.9-21.4-19.6l-8.4-2c-7.7-1.8-11.1-4.9-11.1-10s5.4-10.5,12.9-10.5,11.8,4.4,12.4,12.4h14.7C55.1,7.7,44.8,1,29.6,1S2.9,11.8,2.9,22.1s5.7,15.2,20.4,19l7.2,1.8c6.3,1.6,12.7,4.2,12.7,11.3s-5.6,10.3-13.9,10.3-13.9-5.3-14.4-15H0Z"/>
+      <path d="M263.4,69.7c15.7,0,26.7-10.4,26.7-25.2s-11.2-24.8-26.7-24.8-26.7,8.5-26.7,24.8,11,25.2,26.7,25.2ZM263.4,24.1c9.5,0,10.6,11.6,10.6,20.4s-1.2,20.8-10.6,20.8-10.6-11.9-10.6-20.8,1.2-20.4,10.6-20.4Z"/>
+      <rect x="214.9" y="20.8" width="14.8" height="47.8"/>
+      <path d="M189.8,26.2c0,.2-.2.5-.4.5-.2,0-.5,0-.6-.2-3.2-4.5-8.1-6.8-14.6-6.8-13.1,0-21.6,9.7-21.6,24.7s8.3,25.2,21.7,25.2,12-2.9,15.3-8.5c.1-.2.4-.3.6-.3.2,0,.4.3.4.6v7.1h14.1V.5h-14.8v25.7ZM178.9,63.2c-6.8,0-10.2-6.3-10.2-18.8s3.4-18.3,10.1-18.3,11.2,7.5,11.2,18.3-4.7,18.8-11.2,18.8Z"/>
+    </g>
+    <path d="M148.7,82.3v68.1h14.8v-17.4c0-.2,0-.3.2-.4l6.3-6c.1-.1.3-.2.5-.1.2,0,.3.2.4.3l11.3,23.6h16.3l-16.6-34.5c-.1-.2,0-.5.1-.7l13.5-12.7h-8.3l-22.7,21.7c-.2.2-.4.2-.6.1-.2,0-.3-.3-.3-.5v-41.6h-14.8Z"/>
+    <rect x="248.9" y="82.3" width="15.4" height="12.1"/>
+  </svg></a>
+  <div class="pill-row">
+    <span class="pill">Alpine Modern</span>
+    <span class="pill">Round 2</span>
+    <span class="pill meta">Shared 9/20</span>
+  </div>
+</header>
+
+<div class="stack">
+
+<section class="card bright">
+  <span class="label">Café collateral and coffee packaging</span>
+  <h1 class="display gap-md">What goes on each piece.</h1>
+  <p class="body gap-md">My suggestion for the artwork and color on every item in Round 2, written so we can go through it together and settle the open ones before design starts.</p>
+  <div class="headnote">
+    <div><span class="label">Carried forward</span><div class="v">ALPINE MODERN spelled out and set on one line. The X stays small and secondary.</div></div>
+    <div><span class="label">Ground</span><div class="v">Red, white and black, with the secondary colors showing up in application.</div></div>
+    <div><span class="label">Repeating graphic</span><div class="v">The gridded pattern, and a quiet abstract mountain on the coffee bags.</div></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-grid">
+    <div class="rail-number">01</div>
+    <div>
+      <h2 class="section-head">Supplies</h2>
+      <div class="colhead">
+        <span class="label">Deliverable and color</span>
+        <span class="label">Artwork and notes</span>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Hot Cup - 8oz</h3>
+          <p class="icolor">White cup, Alpine Red and Smoky Quartz</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Grid layout with content blocks. ALPINE MODERN horizontal on one line, X small and secondary, serif Quality Coffee tag. Two designs to review.</p>
+          <p class="itemnote">R1 rejected with a redirect. Wants the mood board grid and content blocks brought in more directly, more than one design, white base.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Hot Cup - 12oz</h3>
+          <p class="icolor">White cup, Alpine Red and Smoky Quartz</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Grid layout with content blocks. ALPINE MODERN horizontal on one line, X small and secondary, serif Quality Coffee tag. Two designs to review.</p>
+          <p class="itemnote">Same design as 8oz.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Hot Cup - 16oz</h3>
+          <p class="icolor">White cup, Alpine Red and Smoky Quartz</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Grid layout with content blocks. ALPINE MODERN horizontal on one line, X small and secondary, serif Quality Coffee tag. Two designs to review.</p>
+          <p class="itemnote">Same design as 8oz.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Hot Cup - 20oz</h3>
+          <p class="icolor">White cup, Alpine Red and Smoky Quartz</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Grid layout with content blocks. ALPINE MODERN horizontal on one line, X small and secondary, serif Quality Coffee tag. Two designs to review.</p>
+          <p class="itemnote">Same design as 8oz.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Cold Cup - 12oz</h3>
+          <p class="icolor">Clear cup, white and Alpine Red</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Same grid layout as the hot cups, printed in one color so the drink reads through. Wordmark on one line, small X.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Cold Cup - 16oz</h3>
+          <p class="icolor">Clear cup, white and Alpine Red</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Same grid layout as the hot cups, printed in one color so the drink reads through. Wordmark on one line, small X.</p>
+          <p class="itemnote">Same design as 12oz.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Cold Cup - 20oz</h3>
+          <p class="icolor">Clear cup, white and Alpine Red</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Same grid layout as the hot cups, printed in one color so the drink reads through. Wordmark on one line, small X.</p>
+          <p class="itemnote">Same design as 12oz.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Deli Paper</h3>
+          <p class="icolor">Alpine Red on natural</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Gridded pattern repeating edge to edge, wordmark set into the grid at intervals.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Pastry Bag</h3>
+          <p class="icolor">Alpine Red on natural</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Wordmark on one line with the serif Since 2014 below it. Single color.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Handle Bag</h3>
+          <p class="icolor">Alpine Red sides and handles, natural face</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Keep the R1 design. X reduced so it sits with the type instead of dominating the face.</p>
+          <p class="itemnote">R1 approved with one fix. Red sides and handles and the typeface are approved. X was too large.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Coffee Sleeve</h3>
+          <p class="icolor">Smoky Quartz on natural kraft</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Gridded pattern band with the wordmark on one line centered on the seam.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="section-grid">
+    <div class="rail-number">02</div>
+    <div>
+      <h2 class="section-head">Signage</h2>
+      <div class="colhead">
+        <span class="label">Deliverable and color</span>
+        <span class="label">Artwork and notes</span>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Exterior Logo Sign - Variant 1 (29th Street)</h3>
+          <p class="icolor">White on black</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Wordmark with the serif Since 2014 on the bottom only.</p>
+          <p class="itemnote">R1 approved with one fix. Serif on the bottom only, not on top as well.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Exterior Logo Sign - Variant 2 (University Hill)</h3>
+          <p class="icolor">White on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Wordmark with the serif Since 2014 on the bottom only.</p>
+          <p class="itemnote">Same as Variant 1.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Window Logo Decal - Variant 1 (29th Street)</h3>
+          <p class="icolor">White</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Keep the R1 design. Wordmark with the serif Since 2014.</p>
+          <p class="itemnote">R1 approved. Liked the addition of the serif Since 2014.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Window Logo Decal - Variant 2 (University Hill)</h3>
+          <p class="icolor">White</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Same as Variant 1.</p>
+          <p class="itemnote">R1 approved.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Window Message Decal - Variant 1</h3>
+          <p class="icolor">White</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Content block message frame, wordmark small at the base, no imagery.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Window Message Decal - Variant 2</h3>
+          <p class="icolor">White</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Second message layout on the same frame.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Sidewalk Logo Board - Variant 1 (29th Street)</h3>
+          <p class="icolor">White on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Wordmark centered on one line with the X above it at small scale.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Sidewalk Logo Board - Variant 2 (University Hill)</h3>
+          <p class="icolor">White on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Same as Variant 1.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Sidewalk Message Board - Variant 1 (29th Street)</h3>
+          <p class="icolor">White on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Grid with a fixed wordmark band and an open message field for seasonal copy.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Sidewalk Message Board - Variant 2 (University Hill)</h3>
+          <p class="icolor">White on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Same as Variant 1.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="section-grid">
+    <div class="rail-number">03</div>
+    <div>
+      <h2 class="section-head">Apparel</h2>
+      <div class="colhead">
+        <span class="label">Deliverable and color</span>
+        <span class="label">Artwork and notes</span>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">T Shirt - Heavy Faded</h3>
+          <p class="icolor">Faded Pink blank, Alpine Red and black print</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Buffalo set in a Boulder context, with the serif tag. Full front.</p>
+          <p class="itemnote">R1 liked the direction and the tag. Wanted the buffalo tied to Boulder or Colorado, and a different blank than the one shown. Faded Pink is the blank listed here, so confirm it or pick another.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">T Shirt - Heavy Faded Minus Tee</h3>
+          <p class="icolor">Bone blank, Alpine Red print</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">X with the throwback serif tag. Full front.</p>
+          <p class="itemnote">R1 approved. Liked the combo of the X and the throwback serif for the tag, and orange on coal.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">T Shirt - Heavy Faded Minus Tee</h3>
+          <p class="icolor">Faded Olive blank, bone print</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Icon set, Since 2014 and Quality Coffee, with ALPINE MODERN spelled out. No mountain scene.</p>
+          <p class="itemnote">R1 liked the icons. The mountain scene was not working and AM cannot be the central element. R1 also included a pocket tee, which has no row in this list. Open on every axis including the copy.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Sweatshirt</h3>
+          <p class="icolor">Bone blank, tonal thread</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Wordmark on one line, embroidered left chest, tonal.</p>
+          <p class="itemnote">Sheet note: simple, elevated embroidery.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Trucker Hat</h3>
+          <p class="icolor">Cypress blank, bone thread</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">X embroidered small and centered on the foam front panel.</p>
+          <p class="itemnote">Sheet note: embroider on trucker foam.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Frame Hat</h3>
+          <p class="icolor">Walnut blank, bone thread</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Wordmark embroidered across the front on one line.</p>
+          <p class="itemnote">Sheet note: embroidery.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Corduroy Hat</h3>
+          <p class="icolor">Moonstone blank, Alpine Red and bone patch</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Woven patch, wordmark on one line with the serif Since 2014 under it.</p>
+          <p class="itemnote">Round 2 swap, replacing one fashion accessory. Patch or embroidery.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Fashion Accessories - Bandana</h3>
+          <p class="icolor">Alpine Red on bone</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Keep the R1 gridded pattern.</p>
+          <p class="itemnote">R1 approved. Liked the gridded out pattern.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Fashion Accessories - Beanie</h3>
+          <p class="icolor">Walnut blank, bone label</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Woven label with the wordmark on one line.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="section-grid">
+    <div class="rail-number">04</div>
+    <div>
+      <h2 class="section-head">Merchandise</h2>
+      <div class="colhead">
+        <span class="label">Deliverable and color</span>
+        <span class="label">Artwork and notes</span>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Drinkware - Milk Glass Mug</h3>
+          <p class="icolor">Alpine Red print</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Keep the R1 design as is.</p>
+          <p class="itemnote">R1 approved outright. This nailed it, no notes.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Drinkware - 8oz Nomad w/ Flip Lid</h3>
+          <p class="icolor">White body, Alpine Red print</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Wordmark wrapping on one line, no monogram.</p>
+          <p class="itemnote">R1 note: stay away from AM or variations as a primary branding element.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Drinkware - 12oz Nomad w/ Flip Lid</h3>
+          <p class="icolor">Moss green body, bone print</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Same as the 8oz.</p>
+          <p class="itemnote">Same note as the 8oz.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Drinkware - 16oz Cold Cup</h3>
+          <p class="icolor">Rain body, bone print</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Wordmark on one line with the X small beneath it. Single color.</p>
+          <p class="itemnote">Round 2 swap, replacing one tote design.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Tote Bags - Variant 1</h3>
+          <p class="icolor">Natural canvas, Alpine Red print</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Keep the R1 design with ALPINE MODERN spelled out in place of AM.</p>
+          <p class="itemnote">R1 approved with one fix. Replace AM with ALPINE MODERN spelled out.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Tote Bags - Variant 2</h3>
+          <p class="icolor">Natural canvas, bone thread</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Gridded pattern embroidered on the lower face, wordmark at the top.</p>
+          <p class="itemnote">Goal is high quality at a higher price point.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="section-grid">
+    <div class="rail-number">05</div>
+    <div>
+      <h2 class="section-head">Promotional assets</h2>
+      <div class="colhead">
+        <span class="label">Deliverable and color</span>
+        <span class="label">Artwork and notes</span>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Table-top Sign</h3>
+          <p class="icolor">Black on white</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Keep the R1 design. X AM small at the base, message field above.</p>
+          <p class="itemnote">R1 approved. X AM works here as a small branding element in a minor role.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">In-store Poster</h3>
+          <p class="icolor">Alpine Red and black on white</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Grid with content blocks, one large headline field and a fixed wordmark band.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Free Beverage Card</h3>
+          <p class="icolor">Alpine Red on white</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Enjoy a 12oz Beverage on us set in the grid, wordmark on the reverse.</p>
+          <p class="itemnote">Round 2 swap, replacing the direct mailer.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Merch Sign</h3>
+          <p class="icolor">Black on white</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Content block price list, wordmark band at the top.</p>
+          <p class="itemnote">Round 2 swap, replacing the sign tag.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Event Asset - Instagram Post</h3>
+          <p class="icolor">Alpine Red, Smoky Quartz, bone</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Keep the R1 design.</p>
+          <p class="itemnote">R1 approved. These look great.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Event Asset - Instagram Story</h3>
+          <p class="icolor">Alpine Red, Smoky Quartz, bone</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Post design carried to vertical, same grid and type sizes.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Event Asset - In-store Flyer</h3>
+          <p class="icolor">Alpine Red and black on white</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Poster layout at A5.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="section-grid">
+    <div class="rail-number">06</div>
+    <div>
+      <h2 class="section-head">Menus</h2>
+      <div class="colhead">
+        <span class="label">Deliverable and color</span>
+        <span class="label">Artwork and notes</span>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Universal Print Menu</h3>
+          <p class="icolor">Black and Alpine Red on white</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Fonts, color and layout updated to match the collateral. Grid and content blocks, no imagery.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Digital Screen - Horizontal (29th Street)</h3>
+          <p class="icolor">White and Alpine Red on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Fonts, color and layout updated to match the collateral. Grid and content blocks, no imagery.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Digital Screen - Vertical (University Hill) - Variant 1</h3>
+          <p class="icolor">White and Alpine Red on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Fonts, color and layout updated to match the collateral. Grid and content blocks, no imagery.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Digital Screen - Vertical (University Hill) - Variant 2</h3>
+          <p class="icolor">White and Alpine Red on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Fonts, color and layout updated to match the collateral. Grid and content blocks, no imagery.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Digital Screen - Vertical (University Hill) - Variant 3</h3>
+          <p class="icolor">White and Alpine Red on black</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Fonts, color and layout updated to match the collateral. Grid and content blocks, no imagery.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="card">
+  <div class="section-grid">
+    <div class="rail-number">07</div>
+    <div>
+      <h2 class="section-head">Coffee packaging</h2>
+      <div class="colhead">
+        <span class="label">Deliverable and color</span>
+        <span class="label">Artwork and notes</span>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Mountain Blend - Primary Package</h3>
+          <p class="icolor">White bag, black and grey artwork</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">White bag. ALPINE MODERN horizontal on one line, X no larger than concept 3, text the same or slightly larger than concept 1, nothing above the tear line. Pixelated mountain in black and grey on the face, same artwork on both SKUs. Gusset gets a pattern element if it works. Printed interior in place of plain foil.</p>
+          <p class="itemnote">R1 carried forward. Bag design stays locked and only the image varies between reviews. Interior print reverses the earlier call to leave the inside as plain foil.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Mountain Blend - Secondary Label</h3>
+          <p class="icolor">Smoky Quartz</p>
+          <span class="pill">Approved in Round 1</span>
+        </div>
+        <div class="iright">
+          <p class="iart">Concept 1 sticker layout, contents and font, cut to a tag shape instead of a rectangle. Color is what separates the SKUs. Same sticker fits the 12oz and the 5lb.</p>
+          <p class="itemnote">R1 approved the concept 1 sticker for layout, contents and font. Two colors to be shown. Tag shape comes from a bag he bought and liked, handmade and off convention.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Espresso SKU - Primary Package</h3>
+          <p class="icolor">White bag, black and grey artwork</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Same bag as Mountain Blend.</p>
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">Espresso SKU - Secondary Label</h3>
+          <p class="icolor">Deep green</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Concept 1 sticker layout, contents and font, cut to a tag shape instead of a rectangle. Color is what separates the SKUs. Same sticker fits the 12oz and the 5lb.</p>
+          <p class="itemnote">Second of the two sticker colors.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ileft">
+          <h3 class="iname">5lb Bag - Primary Package</h3>
+          <p class="icolor">White bag, black and grey artwork</p>
+          
+        </div>
+        <div class="iright">
+          <p class="iart">Same design system as the 12oz, scaled to the rolled face. Same sticker, same wordmark and X relationship.</p>
+          <p class="itemnote">Priced in a separate proposal once a direction is picked for the 12oz bag. Not covered by the current balance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="card slim">
+  <div class="fbottom" style="margin-top:0">
+    <span>&copy; 2026 Studio Parkside</span>
+    <span>Alpine Modern &middot; Round 2</span>
+  </div>
+</footer>
+
+</div>
+</body></html>
