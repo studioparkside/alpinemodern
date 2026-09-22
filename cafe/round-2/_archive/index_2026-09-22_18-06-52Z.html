@@ -122,17 +122,6 @@
   .thumbgrid a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
   .thumbgrid img{display:block;width:100%;height:auto;aspect-ratio:16/9}
 
-  /* ---------- Round 1 reference shot ---------- */
-  .r1shot{display:block;max-width:240px;margin-top:15px;text-decoration:none}
-  .r1shot img{display:block;width:100%;height:auto;aspect-ratio:16/9;
-    border:1px solid var(--outline);border-radius:7px;background:var(--neutral-white);
-    transition:border-color .15s ease}
-  .r1shot .cap{display:block;margin-top:7px;font-size:14px;color:var(--ink-muted);
-    transition:color .15s ease}
-  .r1shot:hover img,.r1shot:focus-visible img{border-color:var(--hairline-strong)}
-  .r1shot:hover .cap,.r1shot:focus-visible .cap{color:var(--ink)}
-  .r1shot:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
-
   /* ---------- Sections ---------- */
   .section-grid{display:grid;grid-template-columns:56px 1fr;gap:24px;align-items:baseline}
   .rail-number{font-size:32px;font-weight:400;line-height:1;letter-spacing:-0.03em;
@@ -153,18 +142,9 @@
   .iname{font-size:23px;font-weight:650;letter-spacing:-0.022em;line-height:1.18}
   .icolor{font-size:16.5px;color:var(--ink-muted);line-height:1.45;margin-top:7px}
   .apr{margin-top:12px;font-size:13px;padding:5px 13px 4px}
-  .iart{font-size:17.5px;line-height:1.5;max-width:58ch;margin:0;color:var(--ink);
-    list-style:none;padding-left:1.15em}
-  .iart li{position:relative;margin-bottom:6px}
-  .iart li:last-child{margin-bottom:0}
-  .iart li::before{content:"\00B7";position:absolute;left:-1.15em;color:var(--ink-muted)}
+  .iart{font-size:17.5px;line-height:1.5;max-width:58ch;margin:0;color:var(--ink)}
   .inote{font-size:16.5px;line-height:1.5;max-width:58ch;color:var(--ink-muted);
-    margin:14px 0 0;padding-top:13px;border-top:1px solid var(--hairline)}
-  .inote ul{list-style:none;margin:6px 0 0;padding-left:1.15em}
-  .inote li{position:relative;margin-bottom:5px}
-  .inote li:last-child{margin-bottom:0}
-  .inote li::before{content:"\00B7";position:absolute;left:-1.15em}
-  .inote li.q{color:var(--ink);font-weight:600;margin-top:9px}
+    margin:13px 0 0;padding-top:13px;border-top:1px solid var(--hairline)}
 
   @media (max-width:860px){
     body{padding:8px;padding-top:calc(var(--header-h) + 8px)}
@@ -320,27 +300,11 @@
             <div>
               <div class="iname">Hot Cup - 8oz</div>
               <div class="icolor">White cup</div>
-              <span class="pill filled apr">Open question</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=9" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-09.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
+              
             </div>
             <div>
-              <ul class="iart">
-                <li>Copy set in stacked blocks, the way the mood boards treated type</li>
-                <li>ALPINE MODERN on one line, the X small</li>
-                <li>Serif Quality Coffee tag</li>
-                <li>Printed in Alpine Red and Smoky Quartz</li>
-                <li>Two designs to look at</li>
-              </ul>
-              <div class="inote">R1 rejected. New design needed.
-                <ul>
-                  <li>Reference mood board: layout grid, content blocks</li>
-                  <li>White cup</li>
-                  <li class="q">Same design across all sizes, or a unique one on each?</li>
-                </ul>
-              </div>
+              <p class="iart">Copy set in stacked blocks, the way the mood boards treated type. ALPINE MODERN on one line, the X small, the serif Quality Coffee tag. Printed in Alpine Red and Smoky Quartz. Two designs to look at.</p>
+              <p class="inote">R1 rejected with a redirect. Wants the mood board layouts and content blocks brought in more directly, more than one design, white base.</p>
             </div>
           </div>
           <div class="row item">
@@ -350,14 +314,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same design as the 8oz</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Same note as the 8oz</li>
-                </ul>
-              </div>
+              <p class="iart">Same design as the 8oz.</p>
+              <p class="inote">Same note as the 8oz.</p>
             </div>
           </div>
           <div class="row item">
@@ -367,14 +325,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same design as the 8oz</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Same note as the 8oz</li>
-                </ul>
-              </div>
+              <p class="iart">Same design as the 8oz.</p>
+              <p class="inote">Same note as the 8oz.</p>
             </div>
           </div>
           <div class="row item">
@@ -384,34 +336,19 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same design as the 8oz</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Same note as the 8oz</li>
-                </ul>
-              </div>
+              <p class="iart">Same design as the 8oz.</p>
+              <p class="inote">Same note as the 8oz.</p>
             </div>
           </div>
           <div class="row item">
             <div>
               <div class="iname">Cold Cup - 12oz</div>
               <div class="icolor">Clear cup</div>
-              <span class="pill filled apr">Open question</span>
+              
             </div>
             <div>
-              <ul class="iart">
-                <li>The same layout as the hot cups</li>
-                <li>Printed in Alpine Red only so the drink reads through</li>
-                <li>ALPINE MODERN on one line, the X small</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Scoped as one design across all sizes</li>
-                  <li class="q">Same question as the hot cups</li>
-                </ul>
-              </div>
+              <p class="iart">The same layout as the hot cups, printed in Alpine Red only so the drink reads through. ALPINE MODERN on one line, the X small.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -421,9 +358,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same design as the 12oz</li>
-              </ul>
+              <p class="iart">Same design as the 12oz.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -433,9 +369,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same design as the 12oz</li>
-              </ul>
+              <p class="iart">Same design as the 12oz.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -445,11 +380,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The R1 bandana grid repeating edge to edge</li>
-                <li>ALPINE MODERN set into it at intervals</li>
-                <li>Printed in Alpine Red</li>
-              </ul>
+              <p class="iart">The R1 bandana grid repeating edge to edge, with ALPINE MODERN set into it at intervals. Printed in Alpine Red.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -459,11 +391,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN on one line</li>
-                <li>Serif Since 2014 below it</li>
-                <li>Printed in Alpine Red</li>
-              </ul>
+              <p class="iart">ALPINE MODERN on one line with the serif Since 2014 below it. Printed in Alpine Red.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -471,23 +400,10 @@
               <div class="iname">Handle Bag</div>
               <div class="icolor">Natural, with Alpine Red sides and handles</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=11" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-11.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The Round 1 design</li>
-                <li>X reduced so it sits with the type instead of dominating the face</li>
-              </ul>
-              <div class="inote">R1 approved with one edit.
-                <ul>
-                  <li>Red sides and handles approved</li>
-                  <li>Typeface approved</li>
-                  <li>X was too large</li>
-                </ul>
-              </div>
+              <p class="iart">The Round 1 design, with the X reduced so it sits with the type instead of dominating the face.</p>
+              <p class="inote">R1 approved with one fix. Red sides and handles and the typeface are approved. The X was too large.</p>
             </div>
           </div>
           <div class="row item">
@@ -497,11 +413,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>A band of the R1 bandana grid</li>
-                <li>ALPINE MODERN centered on the seam</li>
-                <li>Printed in Smoky Quartz</li>
-              </ul>
+              <p class="iart">A band of the R1 bandana grid with ALPINE MODERN centered on the seam. Printed in Smoky Quartz.</p>
+              
             </div>
           </div>
           </div>
@@ -520,22 +433,10 @@
               <div class="iname">Exterior Logo Sign - Variant 1 (29th Street)</div>
               <div class="icolor">Black</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=13" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-13.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN with the serif Since 2014 underneath it</li>
-                <li>Nothing above</li>
-                <li>Painted white</li>
-              </ul>
-              <div class="inote">R1 approved with one edit.
-                <ul>
-                  <li>Serif on the bottom only, not on top as well</li>
-                </ul>
-              </div>
+              <p class="iart">ALPINE MODERN with the serif Since 2014 underneath it and nothing above. Painted white.</p>
+              <p class="inote">R1 approved with one fix. Serif on the bottom only, not on top as well.</p>
             </div>
           </div>
           <div class="row item">
@@ -545,14 +446,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same as Variant 1</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Same note as Variant 1</li>
-                </ul>
-              </div>
+              <p class="iart">Same as Variant 1.</p>
+              <p class="inote">Same note as Variant 1.</p>
             </div>
           </div>
           <div class="row item">
@@ -560,21 +455,10 @@
               <div class="iname">Window Logo Decal - Variant 1 (29th Street)</div>
               <div class="icolor">White</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=12" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-12.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The Round 1 design</li>
-                <li>ALPINE MODERN with the serif Since 2014</li>
-              </ul>
-              <div class="inote">R1 approved.
-                <ul>
-                  <li>Liked the addition of the serif Since 2014</li>
-                </ul>
-              </div>
+              <p class="iart">The Round 1 design. ALPINE MODERN with the serif Since 2014.</p>
+              <p class="inote">R1 approved. Liked the addition of the serif Since 2014.</p>
             </div>
           </div>
           <div class="row item">
@@ -584,13 +468,8 @@
               <span class="pill light apr">Approved in Round 1</span>
             </div>
             <div>
-              <ul class="iart">
-                <li>Same as Variant 1</li>
-              </ul>
-              <div class="inote">R1 approved.
-                <ul>
-                </ul>
-              </div>
+              <p class="iart">Same as Variant 1.</p>
+              <p class="inote">R1 approved.</p>
             </div>
           </div>
           <div class="row item">
@@ -600,11 +479,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The message set large in the middle of the decal</li>
-                <li>ALPINE MODERN small along the bottom</li>
-                <li>No imagery</li>
-              </ul>
+              <p class="iart">The message set large in the middle of the decal, with ALPINE MODERN small along the bottom. No imagery.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -614,9 +490,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>A second message on the same layout</li>
-              </ul>
+              <p class="iart">A second message on the same layout.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -626,11 +501,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN centered on one line</li>
-                <li>The X above it at small size</li>
-                <li>Painted white</li>
-              </ul>
+              <p class="iart">ALPINE MODERN centered on one line with the X above it at small size. Painted white.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -640,9 +512,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same as Variant 1</li>
-              </ul>
+              <p class="iart">Same as Variant 1.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -652,10 +523,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN painted across the top in white</li>
-                <li>The rest of the board stays open for the daily message</li>
-              </ul>
+              <p class="iart">ALPINE MODERN painted across the top in white. The rest of the board stays open for whatever message gets written that day.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -665,9 +534,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same as Variant 1</li>
-              </ul>
+              <p class="iart">Same as Variant 1.</p>
+              
             </div>
           </div>
           </div>
@@ -687,24 +555,10 @@
               <div class="iname">T Shirt - Heavy Faded</div>
               <div class="icolor">Faded Pink</div>
               
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=18" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-18.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The buffalo placed in a Boulder setting</li>
-                <li>Serif tag</li>
-                <li>Full front, printed in Alpine Red and black</li>
-              </ul>
-              <div class="inote">R1 liked the direction and the tag.
-                <ul>
-                  <li>Tie the buffalo to Boulder or Colorado</li>
-                  <li>Different blank than the one shown</li>
-                  <li class="q">Faded Pink is the blank on your spreadsheet. Confirm it or pick another?</li>
-                </ul>
-              </div>
+              <p class="iart">The buffalo placed in a Boulder setting, with the serif tag. Full front, printed in Alpine Red and black.</p>
+              <p class="inote">R1 liked the direction and the tag. Wanted the buffalo tied to Boulder or Colorado, and a different blank than the one shown. Faded Pink is the blank listed here, so confirm it or pick another.</p>
             </div>
           </div>
           <div class="row item">
@@ -712,22 +566,10 @@
               <div class="iname">T Shirt - Heavy Faded Minus Tee</div>
               <div class="icolor">Bone</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=16" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-16.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The X with the throwback serif tag</li>
-                <li>Full front, printed in Alpine Red</li>
-              </ul>
-              <div class="inote">R1 approved.
-                <ul>
-                  <li>Liked the combo of the X and the throwback serif for the tag</li>
-                  <li>Liked orange on coal</li>
-                </ul>
-              </div>
+              <p class="iart">The X with the throwback serif tag. Full front, printed in Alpine Red.</p>
+              <p class="inote">R1 approved. Liked the combo of the X and the throwback serif for the tag, and orange on coal.</p>
             </div>
           </div>
           <div class="row item">
@@ -735,26 +577,10 @@
               <div class="iname">T Shirt - Heavy Faded Minus Tee</div>
               <div class="icolor">Faded Olive</div>
               
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=19" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-19.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The Since 2014 and Quality Coffee icons</li>
-                <li>ALPINE MODERN spelled out</li>
-                <li>No mountain scene</li>
-                <li>Printed in bone</li>
-              </ul>
-              <div class="inote">R1 liked the icons.
-                <ul>
-                  <li>Mountain scene was not working</li>
-                  <li>AM cannot be the central element</li>
-                  <li>Open on every axis including the copy</li>
-                  <li class="q">R1 showed a pocket tee. Add it to the design direction?</li>
-                </ul>
-              </div>
+              <p class="iart">The Since 2014 and Quality Coffee icons with ALPINE MODERN spelled out. No mountain scene. Printed in bone.</p>
+              <p class="inote">R1 liked the icons. The mountain scene was not working and AM cannot be the central element. R1 also included a pocket tee, which has no row in this list. Open on every axis including the copy.</p>
             </div>
           </div>
           <div class="row item">
@@ -764,16 +590,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN on one line</li>
-                <li>Embroidered on the left chest</li>
-                <li>Thread that matches the blank</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Your note: simple, elevated embroidery</li>
-                </ul>
-              </div>
+              <p class="iart">ALPINE MODERN on one line, embroidered on the left chest in a thread that matches the blank.</p>
+              <p class="inote">Your note: simple, elevated embroidery.</p>
             </div>
           </div>
           <div class="row item">
@@ -783,15 +601,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The X embroidered small and centered on the foam front panel</li>
-                <li>In bone thread</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Your note: embroider on trucker foam</li>
-                </ul>
-              </div>
+              <p class="iart">The X embroidered small and centered on the foam front panel, in bone thread.</p>
+              <p class="inote">Your note: embroider on trucker foam.</p>
             </div>
           </div>
           <div class="row item">
@@ -801,15 +612,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN embroidered across the front on one line</li>
-                <li>In bone thread</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Your note: embroidery</li>
-                </ul>
-              </div>
+              <p class="iart">ALPINE MODERN embroidered across the front on one line, in bone thread.</p>
+              <p class="inote">Your note: embroidery.</p>
             </div>
           </div>
           <div class="row item">
@@ -819,17 +623,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>A woven patch</li>
-                <li>ALPINE MODERN on one line with the serif Since 2014 under it</li>
-                <li>In Alpine Red and bone</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Round 2 swap, replacing one fashion accessory</li>
-                  <li>Patch or embroidery</li>
-                </ul>
-              </div>
+              <p class="iart">A woven patch with ALPINE MODERN on one line and the serif Since 2014 under it, in Alpine Red and bone.</p>
+              <p class="inote">Round 2 swap, replacing one fashion accessory. Patch or embroidery.</p>
             </div>
           </div>
           <div class="row item">
@@ -837,21 +632,10 @@
               <div class="iname">Fashion Accessories - Bandana</div>
               <div class="icolor">Bone</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=20" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-20.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The R1 bandana grid as approved</li>
-                <li>Printed in Alpine Red</li>
-              </ul>
-              <div class="inote">R1 approved.
-                <ul>
-                  <li>Liked the grid of marks</li>
-                </ul>
-              </div>
+              <p class="iart">The R1 bandana grid as approved, printed in Alpine Red.</p>
+              <p class="inote">R1 approved. Liked the grid of marks.</p>
             </div>
           </div>
           <div class="row item">
@@ -861,10 +645,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>A woven label with ALPINE MODERN on one line</li>
-                <li>In bone</li>
-              </ul>
+              <p class="iart">A woven label with ALPINE MODERN on one line, in bone.</p>
+              
             </div>
           </div>
           </div>
@@ -883,21 +665,10 @@
               <div class="iname">Drinkware - Milk Glass Mug</div>
               <div class="icolor">White</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=21" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-21.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The Round 1 design as it stands</li>
-                <li>Printed in Alpine Red</li>
-              </ul>
-              <div class="inote">R1 approved outright.
-                <ul>
-                  <li>No notes</li>
-                </ul>
-              </div>
+              <p class="iart">The Round 1 design as it stands, printed in Alpine Red.</p>
+              <p class="inote">R1 approved outright. This nailed it, no notes.</p>
             </div>
           </div>
           <div class="row item">
@@ -905,22 +676,10 @@
               <div class="iname">Drinkware - 8oz Nomad w/ Flip Lid</div>
               <div class="icolor">White</div>
               
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=23" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-23.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN wrapping on one line</li>
-                <li>No monogram</li>
-                <li>Printed in Alpine Red</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>R1 note: stay away from AM or variations as a primary branding element</li>
-                </ul>
-              </div>
+              <p class="iart">ALPINE MODERN wrapping on one line, no monogram. Printed in Alpine Red.</p>
+              <p class="inote">R1 note: stay away from AM or variations as a primary branding element.</p>
             </div>
           </div>
           <div class="row item">
@@ -930,14 +689,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same as the 8oz, printed in bone</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Same note as the 8oz</li>
-                </ul>
-              </div>
+              <p class="iart">Same as the 8oz, printed in bone.</p>
+              <p class="inote">Same note as the 8oz.</p>
             </div>
           </div>
           <div class="row item">
@@ -947,16 +700,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN on one line</li>
-                <li>The X small beneath it</li>
-                <li>Printed in bone</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Round 2 swap, replacing one tote design</li>
-                </ul>
-              </div>
+              <p class="iart">ALPINE MODERN on one line with the X small beneath it. Printed in bone.</p>
+              <p class="inote">Round 2 swap, replacing one tote design.</p>
             </div>
           </div>
           <div class="row item">
@@ -964,22 +709,10 @@
               <div class="iname">Tote Bags - Variant 1</div>
               <div class="icolor">Natural canvas</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=24" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-24.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The Round 1 design</li>
-                <li>ALPINE MODERN spelled out in place of AM</li>
-                <li>Printed in Alpine Red</li>
-              </ul>
-              <div class="inote">R1 approved with one edit.
-                <ul>
-                  <li>Replace AM with ALPINE MODERN spelled out</li>
-                </ul>
-              </div>
+              <p class="iart">The Round 1 design with ALPINE MODERN spelled out in place of AM. Printed in Alpine Red.</p>
+              <p class="inote">R1 approved with one fix. Replace AM with ALPINE MODERN spelled out.</p>
             </div>
           </div>
           <div class="row item">
@@ -989,16 +722,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The R1 bandana grid embroidered across the lower face</li>
-                <li>ALPINE MODERN above it</li>
-                <li>In bone thread</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Goal is high quality at a higher price point</li>
-                </ul>
-              </div>
+              <p class="iart">The R1 bandana grid embroidered across the lower face with ALPINE MODERN above it, in bone thread.</p>
+              <p class="inote">Goal is high quality at a higher price point.</p>
             </div>
           </div>
           </div>
@@ -1017,22 +742,10 @@
               <div class="iname">Table-top Sign</div>
               <div class="icolor">White</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=14" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-14.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The Round 1 design</li>
-                <li>X AM small at the base with the message above it</li>
-                <li>Printed in black</li>
-              </ul>
-              <div class="inote">R1 approved.
-                <ul>
-                  <li>X AM works here as a small branding element in a minor role</li>
-                </ul>
-              </div>
+              <p class="iart">The Round 1 design. X AM small at the base with the message above it. Printed in black.</p>
+              <p class="inote">R1 approved. X AM works here as a small branding element in a minor role.</p>
             </div>
           </div>
           <div class="row item">
@@ -1042,11 +755,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>One headline running across the top</li>
-                <li>ALPINE MODERN along the bottom edge</li>
-                <li>Printed in Alpine Red and black</li>
-              </ul>
+              <p class="iart">One headline running across the top, ALPINE MODERN along the bottom edge. Printed in Alpine Red and black.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -1056,17 +766,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>2.5x2.5</li>
-                <li>Enjoy a 12oz Beverage on us on the front</li>
-                <li>ALPINE MODERN on the back</li>
-                <li>Printed in Alpine Red</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Round 2 swap, replacing the direct mail postcard</li>
-                </ul>
-              </div>
+              <p class="iart">Enjoy a 12oz Beverage on us on the front, ALPINE MODERN on the back. Printed in Alpine Red.</p>
+              <p class="inote">Round 2 swap, replacing the direct mail postcard.</p>
             </div>
           </div>
           <div class="row item">
@@ -1076,17 +777,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The merch list in one column</li>
-                <li>A hairline between each item</li>
-                <li>ALPINE MODERN at the top</li>
-                <li>Printed in black</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Round 2 swap, replacing the sign tag</li>
-                </ul>
-              </div>
+              <p class="iart">The merch list in one column with a hairline between each item, ALPINE MODERN at the top. Printed in black.</p>
+              <p class="inote">Round 2 swap, replacing the shelf tag.</p>
             </div>
           </div>
           <div class="row item">
@@ -1094,21 +786,10 @@
               <div class="iname">Event Asset - Instagram Post</div>
               
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=15" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-15.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The Round 1 design</li>
-                <li>Alpine Red, Smoky Quartz and bone</li>
-              </ul>
-              <div class="inote">R1 approved.
-                <ul>
-                  <li>These look great</li>
-                </ul>
-              </div>
+              <p class="iart">The Round 1 design. Alpine Red, Smoky Quartz and bone.</p>
+              <p class="inote">R1 approved. These look great.</p>
             </div>
           </div>
           <div class="row item">
@@ -1118,10 +799,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The post design at vertical</li>
-                <li>Same grid and type sizes</li>
-              </ul>
+              <p class="iart">The post design at vertical, same grid and type sizes.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -1131,9 +810,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The poster layout at A5</li>
-              </ul>
+              <p class="iart">The poster layout at A5.</p>
+              
             </div>
           </div>
           </div>
@@ -1154,11 +832,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The same fonts, color and layout rules as the collateral</li>
-                <li>No imagery</li>
-                <li>Printed in black with Alpine Red</li>
-              </ul>
+              <p class="iart">The same fonts, color and layout rules as the collateral. No imagery. Printed in black with Alpine Red.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -1168,11 +843,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The same fonts, color and layout rules as the collateral</li>
-                <li>No imagery</li>
-                <li>White and Alpine Red on black</li>
-              </ul>
+              <p class="iart">The same fonts, color and layout rules as the collateral. No imagery. White and Alpine Red on black.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -1182,9 +854,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same as the horizontal screen, at vertical</li>
-              </ul>
+              <p class="iart">Same as the horizontal screen, at vertical.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -1194,9 +865,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same as the horizontal screen, at vertical</li>
-              </ul>
+              <p class="iart">Same as the horizontal screen, at vertical.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -1206,9 +876,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>Same as the horizontal screen, at vertical</li>
-              </ul>
+              <p class="iart">Same as the horizontal screen, at vertical.</p>
+              
             </div>
           </div>
           </div>
@@ -1228,27 +897,10 @@
               <div class="iname">Mountain Blend - Primary Package</div>
               <div class="icolor">White bag</div>
               
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=26" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-26.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>ALPINE MODERN horizontal on one line</li>
-                <li>The X no larger than concept 3</li>
-                <li>Text the same or slightly larger than concept 1</li>
-                <li>Nothing above the tear line</li>
-                <li>A pixelated mountain in black and grey on the face, the same artwork on both SKUs</li>
-                <li>A pattern element on the gusset if it works</li>
-                <li>Printed interior in place of plain foil</li>
-              </ul>
-              <div class="inote">R1 carried forward.
-                <ul>
-                  <li>Bag design stays locked, only the image varies between reviews</li>
-                  <li>Printed interior reverses the earlier call to leave the inside as plain foil</li>
-                </ul>
-              </div>
+              <p class="iart">ALPINE MODERN horizontal on one line. The X no larger than concept 3. Text the same or slightly larger than concept 1. Nothing above the tear line. A pixelated mountain in black and grey on the face, the same artwork on both SKUs. A pattern element on the gusset if it works. Printed interior in place of plain foil.</p>
+              <p class="inote">R1 carried forward. The bag design stays locked and only the image varies between reviews. The printed interior reverses the earlier call to leave the inside as plain foil.</p>
             </div>
           </div>
           <div class="row item">
@@ -1256,23 +908,10 @@
               <div class="iname">Mountain Blend - Secondary Label</div>
               <div class="icolor">Smoky Quartz</div>
               <span class="pill light apr">Approved in Round 1</span>
-              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=27" target="_blank" rel="noopener">
-                <img src="../../_assets/r1-thumbs/r1-27.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                <span class="cap">Round 1</span>
-              </a>
             </div>
             <div>
-              <ul class="iart">
-                <li>The concept 1 sticker layout, contents and font</li>
-                <li>Cut to a tag shape instead of a rectangle</li>
-                <li>The same sticker fits the 12oz and the 5lb</li>
-              </ul>
-              <div class="inote">R1 approved the concept 1 sticker for layout, contents and font.
-                <ul>
-                  <li>Two colors to be shown</li>
-                  <li>Tag shape comes from a bag you bought and liked, handmade and off convention</li>
-                </ul>
-              </div>
+              <p class="iart">The concept 1 sticker layout, contents and font, cut to a tag shape instead of a rectangle. The same sticker fits the 12oz and the 5lb.</p>
+              <p class="inote">R1 approved the concept 1 sticker for layout, contents and font. Two colors to be shown. The tag shape comes from a bag you bought and liked, handmade and off convention.</p>
             </div>
           </div>
           <div class="row item">
@@ -1282,9 +921,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The same bag as Mountain Blend</li>
-              </ul>
+              <p class="iart">The same bag as Mountain Blend.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -1294,10 +932,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The same layout as the Mountain Blend label</li>
-                <li>Second of the two colors</li>
-              </ul>
+              <p class="iart">The same layout as the Mountain Blend label. Second of the two colors.</p>
+              
             </div>
           </div>
           <div class="row item">
@@ -1307,18 +943,8 @@
               
             </div>
             <div>
-              <ul class="iart">
-                <li>The same system as the 12oz</li>
-                <li>Scaled to the 9.25 inch face when the top is rolled</li>
-                <li>Same sticker</li>
-                <li>Same relationship between ALPINE MODERN and the X</li>
-              </ul>
-              <div class="inote">
-                <ul>
-                  <li>Priced in a separate proposal once a direction is picked for the 12oz bag</li>
-                  <li>Not covered by the current balance</li>
-                </ul>
-              </div>
+              <p class="iart">The same system as the 12oz, scaled to the 9.25 inch face when the top is rolled. Same sticker, same relationship between ALPINE MODERN and the X.</p>
+              <p class="inote">Priced in a separate proposal once a direction is picked for the 12oz bag. Not covered by the current balance.</p>
             </div>
           </div>
           </div>
