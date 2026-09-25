@@ -88,13 +88,10 @@
 
   /* ---------- Notes ---------- */
   .label{font-size:21px;font-weight:650;letter-spacing:-0.016em;margin:34px 0 13px}
-  .notelist{max-width:64ch;margin:0;padding-left:1.9em;list-style:none;counter-reset:note}
-  .notelist li{position:relative;margin-bottom:11px;counter-increment:note}
+  .notelist{max-width:64ch;margin:0;padding-left:1.15em;list-style:none}
+  .notelist li{position:relative;margin-bottom:11px}
   .notelist li:last-child{margin-bottom:0}
-  .notelist li::before{content:counter(note);position:absolute;left:-1.9em;color:var(--ink-muted);
-    font-variant-numeric:tabular-nums}
-  .notemark{margin-top:14px}
-  .notemark img{display:block;height:auto}
+  .notelist li::before{content:"\00B7";position:absolute;left:-1.15em;color:var(--ink-muted)}
 
   /* ---------- Page thumbnails ---------- */
   .pages{border-top:1px solid var(--hairline)}
@@ -259,14 +256,10 @@
         <h2>About this page</h2>
         <p>Everything included in Round 2 is listed below.</p>
         <div class="label">Notes</div>
-        <ol class="notelist">
-          <li>ALPINE MODERN is spelled out on one line throughout and the X stays small.
-            <div class="notemark">
-              <img src="../../_assets/AlpineModern-PrimaryLogotype-web.png" width="253" height="18" alt="Alpine Modern">
-            </div>
-          </li>
-          <li>Items approved in Round 1 stay as they are.</li>
-        </ol>
+        <ul class="notelist">
+          <li>ALPINE MODERN is spelled out on one line throughout and the X stays small.</li>
+          <li>Items marked approved in Round 1 are carried forward as they are.</li>
+        </ul>
         <a class="filelink wide" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf" target="_blank" rel="noopener"><span>Round 1 concepts</span><span class="ar" aria-hidden="true">&#8599;</span></a>
         <details class="pages">
           <summary><span>Round 1 pages</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5"/></svg></summary>
