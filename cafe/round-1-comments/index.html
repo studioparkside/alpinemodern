@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Alpine Modern — Round 1 Comments — Studio Parkside</title>
+<style>
+  :root{
+    --ground:#F0F1F2; --card:#FFFFFF; --card-bright:#FFFFFF; --neutral-white:#FFFFFF;
+    --ink:#000000; --ink-soft:#5B5D5F; --paper:#FFFFFF;
+    --outline:#E2E4E6; --hairline:#E9EAEC; --hairline-strong:#000000;
+    --hairline-light:rgba(255,255,255,0.3);
+    --muted:#A3A6A9; --ink-muted:#676A6D;
+    --deep:#000000;
+    --glass:rgba(240,241,242,0.62); --glass-solid:rgba(240,241,242,0.96);
+    --radius:28px; --header-h:96px;
+    --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Segoe UI",Helvetica,Arial,sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{background:var(--ground);color:var(--ink);font-family:var(--font);
+    font-size:19px;line-height:1.62;font-weight:400;-webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;padding:12px;padding-top:calc(var(--header-h) + 12px)}
+  a{color:var(--ink);text-underline-offset:3px}
+  .stack{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+
+  /* ---------- Fixed glass header ---------- */
+  .siteheader{position:fixed;top:0;left:0;right:0;z-index:60;height:var(--header-h);
+    display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 34px;
+    background:var(--glass);-webkit-backdrop-filter:blur(26px) saturate(165%);
+    backdrop-filter:blur(26px) saturate(165%);border-bottom:1px solid var(--outline)}
+  @supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+    .siteheader{background:var(--glass-solid)}
+  }
+  .siteheader .logo{height:19px}
+  .logo{display:block;height:17px;width:auto;aspect-ratio:1499.4 / 151;fill:var(--ink)}
+  .pill-group{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .header-right{display:flex;align-items:center;gap:14px}
+
+
+  /* ---------- Pills ---------- */
+  .pill{display:inline-block;font-size:14px;font-weight:600;letter-spacing:-0.004em;
+    padding:7px 16px 6px;border:1px solid var(--hairline-strong);border-radius:999px;white-space:nowrap}
+  .pill.filled{background:var(--ink);border-color:var(--ink);color:var(--ground)}
+  .pill.light{border-color:var(--outline);color:var(--ink-soft);font-weight:500}
+  .pill.meta{border-color:transparent;color:var(--ink-muted);font-weight:500;font-variant-numeric:tabular-nums}
+  .card.dark .pill{border-color:rgba(255,255,255,0.5)}
+  .card.dark .pill.meta{border-color:transparent;color:rgba(255,255,255,0.62)}
+
+
+  /* ---------- Cards ---------- */
+  .card{background:var(--card);border:1px solid var(--outline);border-radius:var(--radius);padding:64px 72px}
+  .card.dark{background:var(--deep);border-color:var(--deep);color:#fff}
+  .card.dark a{color:#fff}
+  .botbar{display:flex;justify-content:space-between;align-items:center;gap:24px;
+    padding:24px 16px 40px;font-size:14.5px;color:var(--ink-soft)}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:88px 72px 80px}
+  .hero-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:64px}
+  .hero-main{flex:1;min-width:0}
+  h1{font-size:clamp(48px,6.6vw,92px);line-height:0.98;letter-spacing:-0.034em;font-weight:650;max-width:14ch}
+  h1 .h1-sub{display:block;font-weight:400;color:rgba(255,255,255,0.45)}
+
+  /* ---------- Contents ---------- */
+  .toc{display:flex;flex-direction:column;flex-shrink:0;min-width:320px;padding-top:6px}
+  .toc a{display:flex;align-items:baseline;gap:14px;font-size:14.5px;color:rgba(255,255,255,0.72);
+    text-decoration:none;padding:10.5px 2px 9.5px;letter-spacing:-0.005em}
+  .toc a + a{border-top:1px solid var(--hairline-light)}
+  .toc a:hover{color:#fff}
+  .toc a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .toc-num{font-weight:600;font-variant-numeric:tabular-nums;color:#fff;min-width:22px}
+
+  /* ---------- File link ---------- */
+  .filelink{display:flex;align-items:center;justify-content:space-between;gap:20px;
+    max-width:64ch;margin-top:32px;padding:18px 2px 17px;
+    border-top:1px solid var(--hairline);text-decoration:none;
+    font-size:18px;font-weight:600;letter-spacing:-0.012em;color:var(--ink);
+    transition:border-color .15s ease}
+  .filelink:hover,.filelink:focus-visible{border-top-color:var(--hairline-strong)}
+  .filelink .ar{font-size:15px;color:var(--ink-muted);transition:color .15s ease}
+  .filelink:hover .ar,.filelink:focus-visible .ar{color:var(--ink)}
+  .filelink:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+  .filelink.wide{max-width:none}
+
+  /* ---------- Notes ---------- */
+  .label{font-size:21px;font-weight:650;letter-spacing:-0.016em;margin:34px 0 13px}
+  .notelist{max-width:64ch;margin:0;padding-left:1.15em;list-style:none}
+  .notelist li{position:relative;margin-bottom:11px}
+  .notelist li:last-child{margin-bottom:0}
+  .notelist li::before{content:"\00B7";position:absolute;left:-1.15em;color:var(--ink-muted)}
+
+  /* ---------- Page thumbnails ---------- */
+  .pages{border-top:1px solid var(--hairline)}
+  .pages > summary{display:flex;align-items:center;justify-content:space-between;gap:20px;
+    list-style:none;cursor:pointer;padding:18px 2px 17px;
+    font-size:18px;font-weight:600;letter-spacing:-0.012em;color:var(--ink)}
+  .pages > summary::-webkit-details-marker{display:none}
+  .pages > summary .chev{width:13px;height:13px;flex:none;color:var(--ink-muted);
+    transition:transform .2s ease,color .15s ease}
+  .pages[open] > summary .chev{transform:rotate(180deg)}
+  .pages > summary:hover .chev{color:var(--ink)}
+  .pages > summary:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+  @media (prefers-reduced-motion: reduce){ .pages > summary .chev{transition:none} }
+  .thumbgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:11px;padding:3px 0 26px}
+  .thumbgrid a{display:block;border:1px solid var(--outline);border-radius:7px;overflow:hidden;
+    background:var(--neutral-white);transition:border-color .15s ease}
+  .thumbgrid a:hover,.thumbgrid a:focus-visible{border-color:var(--hairline-strong)}
+  .thumbgrid a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .thumbgrid img{display:block;width:100%;height:auto;aspect-ratio:16/9}
+
+  /* ---------- Round 1 reference shot ---------- */
+  .r1shot{display:block;max-width:240px;margin:0 0 18px;text-decoration:none}
+  .r1shot img{display:block;width:100%;height:auto;aspect-ratio:16/9;
+    border:1px solid var(--outline);border-radius:7px;background:var(--neutral-white);
+    transition:border-color .15s ease}
+  .r1shot .cap{display:block;margin-top:7px;font-size:14px;color:var(--ink-muted);
+    transition:color .15s ease}
+  .r1shot:hover img,.r1shot:focus-visible img{border-color:var(--hairline-strong)}
+  .r1shot:hover .cap,.r1shot:focus-visible .cap{color:var(--ink)}
+  .r1shot:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+  .r1shot.photo{max-width:150px}
+  .r1shot.photo img{aspect-ratio:3/4}
+
+  /* ---------- Sections ---------- */
+  .section-grid{display:grid;grid-template-columns:56px 1fr;gap:24px;align-items:baseline}
+  .rail-number{font-size:32px;font-weight:400;line-height:1;letter-spacing:-0.03em;
+    font-variant-numeric:tabular-nums;position:sticky;top:calc(var(--header-h) + 24px)}
+  .section-body h2{font-size:clamp(32px,3.8vw,46px);font-weight:600;letter-spacing:-0.024em;
+    line-height:1.06;margin-bottom:16px;max-width:20ch}
+  .section-body p{max-width:64ch;margin-bottom:25px}
+  .section-body p:last-child{margin-bottom:0}
+
+  /* ---------- Ruled rows ---------- */
+  .rows{margin:26px 0 0;background:var(--card-bright);border:1px solid var(--outline);
+    border-radius:20px;padding:6px 40px 6px 32px}
+  .colhead{display:grid;grid-template-columns:290px 1fr;gap:34px;padding:18px 0 14px;
+    font-size:14px;font-weight:600;letter-spacing:-0.004em;color:var(--ink-muted)}
+  .row{display:grid;grid-template-columns:290px 1fr;gap:34px;padding:24px 0}
+  .rows .colhead + .row{border-top:1px solid var(--hairline-strong)}
+  .rows .row + .row{border-top:1px solid var(--hairline)}
+  .iname{font-size:23px;font-weight:650;letter-spacing:-0.022em;line-height:1.18}
+  .icolor{font-size:16.5px;color:var(--ink-muted);line-height:1.45;margin-top:7px}
+  .apr{margin-top:12px;font-size:13px;padding:5px 13px 4px}
+  .iart{font-size:17.5px;line-height:1.5;max-width:58ch;margin:0;color:var(--ink);
+    list-style:none;padding-left:1.15em}
+  .iart li{position:relative;margin-bottom:6px}
+  .iart li:last-child{margin-bottom:0}
+  .iart li::before{content:"\00B7";position:absolute;left:-1.15em;color:var(--ink-muted)}
+  .inote{font-size:16.5px;line-height:1.5;max-width:58ch;color:var(--ink-muted);
+    margin:14px 0 0;padding-top:13px;border-top:1px solid var(--hairline)}
+  .inote ul{list-style:none;margin:6px 0 0;padding-left:1.15em}
+  .inote li{position:relative;margin-bottom:5px}
+  .inote li:last-child{margin-bottom:0}
+  .inote li::before{content:"\00B7";position:absolute;left:-1.15em}
+  .inote li.q{color:var(--ink);font-weight:600;margin-top:9px}
+
+  @media (max-width:860px){
+    body{padding:8px;padding-top:calc(var(--header-h) + 8px)}
+    .siteheader{padding:0 18px}
+    .card{padding:40px 24px}
+    .hero{padding:48px 24px 44px}
+    .hero-grid{flex-direction:column;gap:34px}
+    .toc{min-width:0;width:100%}
+    .section-grid{grid-template-columns:1fr;gap:8px}
+    .rail-number{position:static;font-size:26px}
+    .rows{padding:4px 20px}
+    .colhead{display:none}
+    .thumbgrid{grid-template-columns:repeat(3,1fr);gap:8px}
+    .row{grid-template-columns:1fr;gap:12px}
+    .iname{font-size:21px}
+  }
+  @media print{
+    :root{
+      --ground:#F0F1F2; --card:#FFFFFF; --card-bright:#FFFFFF; --neutral-white:#FFFFFF;
+      --ink:#000000; --ink-soft:#5B5D5F; --outline:#E2E4E6; --hairline:#E9EAEC;
+      --hairline-strong:#000000; --muted:#A3A6A9; --ink-muted:#676A6D;
+      color-scheme:light;
+    }
+    .siteheader{display:none !important}
+    .pages{display:none !important}
+    body{background:#fff;padding:0;padding-top:0;font-size:11.5pt;line-height:1.45;color:#000}
+    .stack{max-width:none;gap:0}
+    .card{border:0;border-radius:0;padding:0 0 18pt;break-inside:avoid}
+    .card.dark{background:#fff;color:#000;border:1.5pt solid #000;padding:14pt;margin-bottom:14pt}
+    h1 .h1-sub,.toc a{color:#000}
+    .row{break-inside:avoid;grid-template-columns:200px 1fr;gap:20px}
+    .colhead{grid-template-columns:200px 1fr;gap:20px}
+    .rail-number{position:static}
+    @page{margin:14mm}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="sp-logo" viewBox="0 0 1499.4 151">
+    <g>
+      <path d="M150.6,23.6v19.5c0,.7-.6,1.2-1.2,1.2h-15.8v10.7h15.8c.7,0,1.2.6,1.2,1.2v66.6c0,19.2,8.2,26.1,31.5,26.1s17.3-.1,24.6-.4v-10.4h-10.3c-8.8,0-13.6-2.3-13.6-14.3l.2-67.6c0-.7.6-1.2,1.2-1.2h22.5v-10.7h-22.5c-.7,0-1.2-.6-1.2-1.2V11.7l-32.4,11.8Z"/>
+      <path d="M320.9,148.7V44.3h-32.4v53.1c0,24.5-8.1,39.1-21.6,39.1s-16.2-3-16.2-22.9V44.3h-32.4v65.5c0,26,13.4,41,36.8,41s26.6-6.5,32.7-18.2c.3-.5.8-.8,1.4-.6.6.1,1,.6,1,1.2v15.6h30.7Z"/>
+      <path d="M0,106.9c3.5,27.9,26.8,43.9,64.1,43.9s61.5-24.2,61.5-46.6-22.5-37-46.7-42.9l-18.3-4.4c-16.8-4-24.3-10.7-24.3-21.8s11.8-22.9,28.1-22.9,25.8,9.6,27,27.1h32.1C120.4,15.7,97.9,1.1,64.5,1.1S6.4,24.8,6.4,47.1s12.5,33.3,44.6,41.4l15.8,4c13.8,3.5,27.8,9.1,27.8,24.7s-12.2,22.5-30.4,22.5-30.2-11.6-31.4-32.8H0Z"/>
+      <path d="M575,151c34.4,0,58.4-22.6,58.4-55s-24.6-54.2-58.4-54.2-58.4,18.6-58.4,54.2,24,55,58.4,55ZM575,51.5c20.7,0,23.1,25.4,23.1,44.5s-2.6,45.4-23.1,45.4-23.1-25.9-23.1-45.4,2.6-44.5,23.1-44.5Z"/>
+      <rect x="468.5" width="33.6" height="26.5"/>
+      <rect x="469.1" y="44.3" width="32.4" height="104.4"/>
+      <path d="M414.3,56.1c0,.5-.4,1-.9,1.2-.5.2-1.1,0-1.4-.5-7-9.8-17.7-14.8-32-14.8-28.6,0-47.1,21.2-47.1,54s18.1,55,47.3,55,26.2-6.4,33.4-18.5c.3-.5.9-.7,1.4-.6.5.1.9.6.9,1.2v15.6h30.7V0h-32.4v56.1ZM390.6,136.9c-14.8,0-22.2-13.8-22.2-40.9s7.4-39.9,22-39.9,24.6,16.4,24.6,39.9-10.2,40.9-24.4,40.9Z"/>
+    </g>
+    <g>
+      <path d="M1170.7,84.4l-10.9-2.7c-13.4-3.4-20.7-6.8-20.7-15.3s7.5-14.9,19.1-14.9,17.2,6.7,18.2,19.3h28.9c-2.5-17.9-20.4-29-47.1-29s-46.2,13.9-46.2,33.8,9.5,25.4,32.9,30.9l10.7,2.5c16.4,3.9,23.4,9.1,23.4,17.4s-8.1,15.1-21.2,15.1-19.7-8.3-20.5-22.9h-29.5c2.6,20.9,20.3,32.4,50.1,32.4s49.2-10.8,49.2-35.1-13.9-26-36.2-31.6Z"/>
+      <path d="M955.2,92c0-15.8,6.5-23.5,19.9-23.5s9.9.5,15.8,1.3v-25.6c-2-.2-4.1-.3-5.9-.3-9.8,0-17,3.9-22.5,12.2-2.9,4.3-5.1,8.9-6.3,13.5-.2.6-.7,1-1.4.9-.6,0-1.1-.6-1.1-1.2v-25h-30.9v104.4h32.4v-56.7Z"/>
+      <path d="M876.8,131.7c.5.1.9.6.9,1.1l.8,15.8h29.4l-.4-8.5c-.3-6.6-.6-10.6-.6-13.3l.2-42.6c0-12.7-3.4-22.7-10.3-29.7-8.2-8.3-21.4-12.5-39-12.5-26.2,0-46.2,13.4-49.2,32.8h29.9c.9-15,7.7-23.3,19.2-23.3s18,7.8,18,24.6v6.1c0,.6-.4,1.1-1,1.2l-19.7,3.4c-37.2,6.4-50.4,15.6-50.4,34.9s19.5,29.2,36.1,29.2,27.4-6.4,34.6-18.5c.3-.5.8-.7,1.4-.6ZM853.8,136.1c-10.3,0-17-7-17-17.8s11.6-21.4,37.7-23.7c.3,0,.7,0,1,.3.3.2.4.6.4.9v9.4c0,21.2-11.4,30.9-22,30.9Z"/>
+      <path d="M1483.2,117c-4,13.3-14.8,21.2-29.1,21.2s-29.4-15.2-29.4-40.7.6-1.2,1.2-1.2h73.5v-3.2c0-30.1-22.4-51-54.4-51s-55,19-55,54.2,29.3,54.8,58.4,54.8,45.1-12.7,50.7-34h-16ZM1445,51.7c5,0,9.1,1.6,12.2,4.7,5.1,5.1,7.5,14.2,7.4,27.8,0,.7-.6,1.2-1.2,1.2h-37.4c-.3,0-.7-.1-.9-.4-.2-.2-.4-.6-.4-.9.4-21.6,7.3-32.5,20.4-32.5Z"/>
+      <path d="M736.8,4.2h-50.8v144.5h35.1v-55.5c0-.7.6-1.2,1.2-1.2h14.5c30.7,0,67.2-7.7,67.2-44.5s-22.6-43.3-67.2-43.3ZM735.2,80.2h-12.8c-.7,0-1.2-.6-1.2-1.2V17.2c0-.7.6-1.2,1.2-1.2h12.8c20.1,0,31.7,11.6,31.7,31.7s-11.3,32.5-31.7,32.5Z"/>
+      <rect x="1219.3" y="44.3" width="32.4" height="104.4"/>
+      <path d="M1377.9,148.7V0h-32.4v56.1c0,.5-.4,1-.9,1.2-.5.2-1.1,0-1.4-.5-7-9.8-17.7-14.8-32-14.8-28.6,0-47.1,21.2-47.1,54s18.1,55,47.3,55,26.2-6.4,33.4-18.5c.3-.5.9-.7,1.4-.6.5.1.9.6.9,1.2v15.6h30.7ZM1321.8,136.9c-14.8,0-22.2-13.8-22.2-40.9s7.4-39.9,22-39.9,24.6,16.4,24.6,39.9-10.2,40.9-24.4,40.9Z"/>
+      <path d="M999.9,0v148.7h32.4v-38c0-.3.1-.7.4-.9l13.9-13c.3-.3.7-.4,1.1-.3.4,0,.7.3.9.7l24.7,51.6h35.7l-36.3-75.3c-.2-.5-.1-1.1.3-1.5l29.4-27.7h-18.2l-49.6,47.3c-.4.3-.9.4-1.4.2-.5-.2-.8-.6-.8-1.1V0h-32.4Z"/>
+      <rect x="1218.6" width="33.6" height="26.5"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="siteheader">
+  <svg class="logo" role="img" aria-label="Studio Parkside"><use href="#sp-logo"/></svg>
+  <div class="header-right">
+    <div class="pill-group">
+      <span class="pill filled">Alpine Modern</span>
+      <span class="pill meta">Shared 9/25</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="stack">
+
+    <div class="card dark hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <h1>Alpine Modern<span class="h1-sub">Round 1 Comments</span></h1>
+        </div>
+        <nav class="toc" aria-label="Contents">
+          <a href="#s01"><span class="toc-num">01</span> Supplies</a>
+          <a href="#s02"><span class="toc-num">02</span> Signage</a>
+          <a href="#s03"><span class="toc-num">03</span> Apparel</a>
+          <a href="#s04"><span class="toc-num">04</span> Merchandise</a>
+          <a href="#s05"><span class="toc-num">05</span> Promotional</a>
+          <a href="#s06"><span class="toc-num">06</span> Menus</a>
+          <a href="#s07"><span class="toc-num">07</span> Coffee packaging</a>
+        </nav>
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="section-body">
+        <h2>About this page</h2>
+        <p>Everything included in Round 2 is listed below.</p>
+        <div class="label">Notes</div>
+        <ul class="notelist">
+          <li>ALPINE MODERN is spelled out on one line throughout and the X stays small.</li>
+          <li>Items marked approved in Round 1 are carried forward as they are.</li>
+        </ul>
+        <a class="filelink wide" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf" target="_blank" rel="noopener"><span>Round 1 concepts</span><span class="ar" aria-hidden="true">&#8599;</span></a>
+        <details class="pages">
+          <summary><span>Round 1 pages</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5"/></svg></summary>
+          <div class="thumbgrid">
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=1" target="_blank" rel="noopener" aria-label="Round 1, page 1"><img src="../../_assets/r1-thumbs/r1-01.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=2" target="_blank" rel="noopener" aria-label="Round 1, page 2"><img src="../../_assets/r1-thumbs/r1-02.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=3" target="_blank" rel="noopener" aria-label="Round 1, page 3"><img src="../../_assets/r1-thumbs/r1-03.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=4" target="_blank" rel="noopener" aria-label="Round 1, page 4"><img src="../../_assets/r1-thumbs/r1-04.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=5" target="_blank" rel="noopener" aria-label="Round 1, page 5"><img src="../../_assets/r1-thumbs/r1-05.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=6" target="_blank" rel="noopener" aria-label="Round 1, page 6"><img src="../../_assets/r1-thumbs/r1-06.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=7" target="_blank" rel="noopener" aria-label="Round 1, page 7"><img src="../../_assets/r1-thumbs/r1-07.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=8" target="_blank" rel="noopener" aria-label="Round 1, page 8"><img src="../../_assets/r1-thumbs/r1-08.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=9" target="_blank" rel="noopener" aria-label="Round 1, page 9"><img src="../../_assets/r1-thumbs/r1-09.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=10" target="_blank" rel="noopener" aria-label="Round 1, page 10"><img src="../../_assets/r1-thumbs/r1-10.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=11" target="_blank" rel="noopener" aria-label="Round 1, page 11"><img src="../../_assets/r1-thumbs/r1-11.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=12" target="_blank" rel="noopener" aria-label="Round 1, page 12"><img src="../../_assets/r1-thumbs/r1-12.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=13" target="_blank" rel="noopener" aria-label="Round 1, page 13"><img src="../../_assets/r1-thumbs/r1-13.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=14" target="_blank" rel="noopener" aria-label="Round 1, page 14"><img src="../../_assets/r1-thumbs/r1-14.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=15" target="_blank" rel="noopener" aria-label="Round 1, page 15"><img src="../../_assets/r1-thumbs/r1-15.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=16" target="_blank" rel="noopener" aria-label="Round 1, page 16"><img src="../../_assets/r1-thumbs/r1-16.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=17" target="_blank" rel="noopener" aria-label="Round 1, page 17"><img src="../../_assets/r1-thumbs/r1-17.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=18" target="_blank" rel="noopener" aria-label="Round 1, page 18"><img src="../../_assets/r1-thumbs/r1-18.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=19" target="_blank" rel="noopener" aria-label="Round 1, page 19"><img src="../../_assets/r1-thumbs/r1-19.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=20" target="_blank" rel="noopener" aria-label="Round 1, page 20"><img src="../../_assets/r1-thumbs/r1-20.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=21" target="_blank" rel="noopener" aria-label="Round 1, page 21"><img src="../../_assets/r1-thumbs/r1-21.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=22" target="_blank" rel="noopener" aria-label="Round 1, page 22"><img src="../../_assets/r1-thumbs/r1-22.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=23" target="_blank" rel="noopener" aria-label="Round 1, page 23"><img src="../../_assets/r1-thumbs/r1-23.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=24" target="_blank" rel="noopener" aria-label="Round 1, page 24"><img src="../../_assets/r1-thumbs/r1-24.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=25" target="_blank" rel="noopener" aria-label="Round 1, page 25"><img src="../../_assets/r1-thumbs/r1-25.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=26" target="_blank" rel="noopener" aria-label="Round 1, page 26"><img src="../../_assets/r1-thumbs/r1-26.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=27" target="_blank" rel="noopener" aria-label="Round 1, page 27"><img src="../../_assets/r1-thumbs/r1-27.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=28" target="_blank" rel="noopener" aria-label="Round 1, page 28"><img src="../../_assets/r1-thumbs/r1-28.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=29" target="_blank" rel="noopener" aria-label="Round 1, page 29"><img src="../../_assets/r1-thumbs/r1-29.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=30" target="_blank" rel="noopener" aria-label="Round 1, page 30"><img src="../../_assets/r1-thumbs/r1-30.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=31" target="_blank" rel="noopener" aria-label="Round 1, page 31"><img src="../../_assets/r1-thumbs/r1-31.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=32" target="_blank" rel="noopener" aria-label="Round 1, page 32"><img src="../../_assets/r1-thumbs/r1-32.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=33" target="_blank" rel="noopener" aria-label="Round 1, page 33"><img src="../../_assets/r1-thumbs/r1-33.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=34" target="_blank" rel="noopener" aria-label="Round 1, page 34"><img src="../../_assets/r1-thumbs/r1-34.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=35" target="_blank" rel="noopener" aria-label="Round 1, page 35"><img src="../../_assets/r1-thumbs/r1-35.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=36" target="_blank" rel="noopener" aria-label="Round 1, page 36"><img src="../../_assets/r1-thumbs/r1-36.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=37" target="_blank" rel="noopener" aria-label="Round 1, page 37"><img src="../../_assets/r1-thumbs/r1-37.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=38" target="_blank" rel="noopener" aria-label="Round 1, page 38"><img src="../../_assets/r1-thumbs/r1-38.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=39" target="_blank" rel="noopener" aria-label="Round 1, page 39"><img src="../../_assets/r1-thumbs/r1-39.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+            <a href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=40" target="_blank" rel="noopener" aria-label="Round 1, page 40"><img src="../../_assets/r1-thumbs/r1-40.webp" width="320" height="180" loading="lazy" decoding="async" alt=""></a>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="card" id="s01">
+      <div class="section-grid">
+        <div class="rail-number">01</div>
+        <div class="section-body">
+          <h2>Supplies</h2>
+          <div class="rows">
+            <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
+          <div class="row item">
+            <div>
+              <div class="iname">Hot Cup - 8oz</div>
+              <div class="icolor">White cup</div>
+              <span class="pill filled apr">Open question</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=9" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-09.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>Copy set in stacked blocks, the way the mood boards treated type</li>
+                <li>ALPINE MODERN on one line, the X small</li>
+                <li>Serif &ldquo;Quality Coffee&rdquo; tag</li>
+                <li>Printed in Alpine Red and black</li>
+                <li>Two designs to look at</li>
+              </ul>
+              <div class="inote">R1 rejected. New design needed.
+                <ul>
+                  <li>Reference mood board: layout grid, content blocks</li>
+                  <li>White cup</li>
+                  <li class="q">Same design across all sizes, or a unique one on each?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Hot Cup - 12oz</div>
+              <div class="icolor">White cup</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same design as the 8oz</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Same note as the 8oz</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Hot Cup - 16oz</div>
+              <div class="icolor">White cup</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same design as the 8oz</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Same note as the 8oz</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Hot Cup - 20oz</div>
+              <div class="icolor">White cup</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same design as the 8oz</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Same note as the 8oz</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Cold Cup - 12oz</div>
+              <div class="icolor">Clear cup</div>
+              <span class="pill filled apr">Open question</span>
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The same layout as the hot cups</li>
+                <li>Printed in Alpine Red only so the drink reads through</li>
+                <li>ALPINE MODERN on one line, the X small</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Scoped as one design across all sizes</li>
+                  <li class="q">Same question as the hot cups</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Cold Cup - 16oz</div>
+              <div class="icolor">Clear cup</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same design as the 12oz</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Cold Cup - 20oz</div>
+              <div class="icolor">Clear cup</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same design as the 12oz</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Deli Paper</div>
+              <div class="icolor">Natural</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The R1 bandana grid repeating edge to edge</li>
+                <li>ALPINE MODERN set into it at intervals</li>
+                <li>Printed in Alpine Red</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Pastry Bag</div>
+              <div class="icolor">Natural</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>ALPINE MODERN on one line</li>
+                <li>Serif &ldquo;Since 2014&rdquo; below it</li>
+                <li>Printed in Alpine Red</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Handle Bag</div>
+              <div class="icolor">Natural, with Alpine Red sides and handles</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=11" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-11.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The Round 1 design</li>
+                <li>X reduced so it sits with the type instead of dominating the face</li>
+              </ul>
+              <div class="inote">R1 approved with one edit.
+                <ul>
+                  <li>Red sides and handles approved</li>
+                  <li>Typeface approved</li>
+                  <li>X was too large</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Coffee Sleeve</div>
+              <div class="icolor">Natural kraft</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>A band of the R1 bandana grid</li>
+                <li>ALPINE MODERN centered on the seam</li>
+                <li>Printed in black</li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="card" id="s02">
+      <div class="section-grid">
+        <div class="rail-number">02</div>
+        <div class="section-body">
+          <h2>Signage</h2>
+          <div class="rows">
+            <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
+          <div class="row item">
+            <div>
+              <div class="iname">Exterior Logo Sign - Variant 1 (29th Street)</div>
+              <div class="icolor">Black</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=13" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-13.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>ALPINE MODERN with the serif &ldquo;Since 2014&rdquo; underneath it</li>
+                <li>Nothing above</li>
+                <li>Painted white</li>
+              </ul>
+              <div class="inote">R1 approved with one edit.
+                <ul>
+                  <li>Serif on the bottom only, not on top as well</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Exterior Logo Sign - Variant 2 (University Hill)</div>
+              <div class="icolor">Black</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same as Variant 1</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Same note as Variant 1</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Window Logo Decal - Variant 1 (29th Street)</div>
+              <div class="icolor">White</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=12" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-12.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The Round 1 design</li>
+                <li>ALPINE MODERN with the serif &ldquo;Since 2014&rdquo;</li>
+              </ul>
+              <div class="inote">R1 approved.
+                <ul>
+                  <li>Liked the addition of the serif &ldquo;Since 2014&rdquo;</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Window Logo Decal - Variant 2 (University Hill)</div>
+              <div class="icolor">White</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same as Variant 1</li>
+              </ul>
+              <div class="inote">R1 approved.
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Window Message Decal - Variant 1</div>
+              <div class="icolor">White</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The message set large in the middle of the decal</li>
+                <li>ALPINE MODERN small along the bottom</li>
+                <li>No imagery</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Window Message Decal - Variant 2</div>
+              <div class="icolor">White</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>A second message on the same layout</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Sidewalk Logo Board - Variant 1 (29th Street)</div>
+              <div class="icolor">Black board</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>ALPINE MODERN centered on one line</li>
+                <li>The X above it at small size</li>
+                <li>Painted white</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Sidewalk Logo Board - Variant 2 (University Hill)</div>
+              <div class="icolor">Black board</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same as Variant 1</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Sidewalk Message Board - Variant 1 (29th Street)</div>
+              <div class="icolor">Black board</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>ALPINE MODERN painted across the top in white</li>
+                <li>The rest of the board stays open for the daily message</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Sidewalk Message Board - Variant 2 (University Hill)</div>
+              <div class="icolor">Black board</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same as Variant 1</li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="card" id="s03">
+      <div class="section-grid">
+        <div class="rail-number">03</div>
+        <div class="section-body">
+          <h2>Apparel</h2>
+          <p>Blank colors are as they stand in your spreadsheet.</p>
+          <div class="rows">
+            <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
+          <div class="row item">
+            <div>
+              <div class="iname">T Shirt - Heavy Faded</div>
+              <div class="icolor">Faded Pink</div>
+              <span class="pill filled apr">Open question</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=18" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-18.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The buffalo placed in a Boulder setting</li>
+                <li>Serif tag</li>
+                <li>Full front, printed in Alpine Red and black</li>
+              </ul>
+              
+              <div class="inote">R1 liked the direction and the tag.
+                <ul>
+                  <li>Tie the buffalo to Boulder or Colorado</li>
+                  <li>Different blank than the one shown</li>
+                  <li class="q">Faded Pink is the blank on your spreadsheet. Confirm it or pick another?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">T Shirt - Heavy Faded Minus Tee</div>
+              <div class="icolor">Bone</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=16" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-16.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The X with the throwback serif tag</li>
+                <li>Full front, printed in Alpine Red</li>
+              </ul>
+              <div class="inote">R1 approved.
+                <ul>
+                  <li>Liked the combo of the X and the throwback serif for the tag</li>
+                  <li>Liked orange on coal</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">T Shirt - Heavy Faded Minus Tee</div>
+              <div class="icolor">Faded Olive</div>
+              <span class="pill filled apr">Open question</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=19" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-19.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The &ldquo;Since 2014&rdquo; and &ldquo;Quality Coffee&rdquo; icons</li>
+                <li>ALPINE MODERN spelled out</li>
+                <li>No mountain scene</li>
+                <li>Printed in bone</li>
+              </ul>
+              
+              <div class="inote">R1 liked the icons.
+                <ul>
+                  <li>Mountain scene was not working</li>
+                  <li>AM cannot be the central element</li>
+                  <li>Open on every axis including the copy</li>
+                  <li class="q">R1 showed a pocket tee. Add it to the design direction?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Sweatshirt</div>
+              <div class="icolor">Bone</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>ALPINE MODERN on one line</li>
+                <li>Embroidered on the left chest</li>
+                <li>Thread that matches the blank</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Your note: simple, elevated embroidery</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Trucker Hat</div>
+              <div class="icolor">Cypress</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The X embroidered small and centered on the foam front panel</li>
+                <li>In bone thread</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Your note: embroider on trucker foam</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Frame Hat</div>
+              <div class="icolor">Walnut</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>ALPINE MODERN embroidered across the front on one line</li>
+                <li>In bone thread</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Your note: embroidery</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Corduroy Hat</div>
+              <div class="icolor">Moonstone</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>A woven patch</li>
+                <li>ALPINE MODERN on one line with the serif &ldquo;Since 2014&rdquo; under it</li>
+                <li>In Alpine Red and bone</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Round 2 swap, replacing one fashion accessory</li>
+                  <li>Patch or embroidery</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Fashion Accessories - Bandana</div>
+              <div class="icolor">Bone</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=20" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-20.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The R1 bandana grid as approved</li>
+                <li>Printed in Alpine Red</li>
+              </ul>
+              <div class="inote">R1 approved.
+                <ul>
+                  <li>Liked the grid of marks</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Fashion Accessories - Beanie</div>
+              <div class="icolor">Walnut</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>A woven label with ALPINE MODERN on one line</li>
+                <li>In bone</li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="card" id="s04">
+      <div class="section-grid">
+        <div class="rail-number">04</div>
+        <div class="section-body">
+          <h2>Merchandise</h2>
+          <div class="rows">
+            <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
+          <div class="row item">
+            <div>
+              <div class="iname">Drinkware - Milk Glass Mug</div>
+              <div class="icolor">White</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=21" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-21.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The Round 1 design as it stands</li>
+                <li>Printed in Alpine Red</li>
+              </ul>
+              <div class="inote">R1 approved outright.
+                <ul>
+                  <li>No notes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Drinkware - 8oz Nomad w/ Flip Lid</div>
+              <div class="icolor">White</div>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=23" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-23.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>ALPINE MODERN wrapping on one line</li>
+                <li>No monogram</li>
+                <li>Printed in Alpine Red</li>
+              </ul>
+              
+              <div class="inote">
+                <ul>
+                  <li>R1 note: stay away from AM or variations as a primary branding element</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Drinkware - 12oz Nomad w/ Flip Lid</div>
+              <div class="icolor">Moss green</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same as the 8oz, printed in bone</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Same note as the 8oz</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Drinkware - 16oz Cold Cup</div>
+              <div class="icolor">Rain</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>ALPINE MODERN on one line</li>
+                <li>The X small beneath it</li>
+                <li>Printed in bone</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Round 2 swap, replacing one tote design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Coffee Canister</div>
+              <div class="icolor">Black</div>
+              <span class="pill filled apr">Open question</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=22" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-22.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The Round 1 design</li>
+              </ul>
+              <div class="inote">R1 note: like the hot cups, a chance to take a slightly different approach.
+                <ul>
+                  <li>Not on your spreadsheet</li>
+                  <li class="q">Do you want to include the coffee canister in Round 2?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Tote Bags - Variant 1</div>
+              <div class="icolor">Natural canvas</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=24" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-24.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The Round 1 design</li>
+                <li>ALPINE MODERN spelled out in place of AM</li>
+                <li>Printed in Alpine Red</li>
+              </ul>
+              <div class="inote">R1 approved with one edit.
+                <ul>
+                  <li>Replace AM with ALPINE MODERN spelled out</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Tote Bags - Variant 2</div>
+              <div class="icolor">Natural canvas</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The R1 bandana grid embroidered across the lower face</li>
+                <li>ALPINE MODERN above it</li>
+                <li>In bone thread</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Goal is high quality at a higher price point</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="card" id="s05">
+      <div class="section-grid">
+        <div class="rail-number">05</div>
+        <div class="section-body">
+          <h2>Promotional</h2>
+          <div class="rows">
+            <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
+          <div class="row item">
+            <div>
+              <div class="iname">Table-top Sign</div>
+              <div class="icolor">White</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=14" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-14.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The Round 1 design</li>
+                <li>X AM small at the base with the message above it</li>
+                <li>Printed in black</li>
+              </ul>
+              <div class="inote">R1 approved.
+                <ul>
+                  <li>X AM works here as a small branding element in a minor role</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">In-store Poster</div>
+              <div class="icolor">White</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>One headline running across the top</li>
+                <li>ALPINE MODERN along the bottom edge</li>
+                <li>Printed in Alpine Red and black</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Free Beverage Card</div>
+              <div class="icolor">White</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>2.5x2.5</li>
+                <li>&ldquo;Enjoy a 12oz Beverage on us&rdquo; on the front</li>
+                <li>ALPINE MODERN on the back</li>
+                <li>Printed in Alpine Red</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Round 2 swap, replacing the direct mail postcard</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Merch Sign</div>
+              <div class="icolor">White</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The merch list in one column</li>
+                <li>A hairline between each item</li>
+                <li>ALPINE MODERN at the top</li>
+                <li>Printed in black</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Round 2 swap, replacing the sign tag</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Event Asset - Instagram Post</div>
+              
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=15" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-15.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The Round 1 design</li>
+                <li>Alpine Red, Smoky Quartz (Black) and bone</li>
+              </ul>
+              <div class="inote">R1 approved.
+                <ul>
+                  <li>These look great</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Event Asset - Instagram Story</div>
+              
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The post design at vertical</li>
+                <li>Same grid and type sizes</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Event Asset - In-store Flyer</div>
+              <div class="icolor">White</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The poster layout at A5</li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="card" id="s06">
+      <div class="section-grid">
+        <div class="rail-number">06</div>
+        <div class="section-body">
+          <h2>Menus</h2>
+          <div class="rows">
+            <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
+          <div class="row item">
+            <div>
+              <div class="iname">Universal Print Menu</div>
+              <div class="icolor">White</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The same fonts, color and layout rules as the collateral</li>
+                <li>No imagery</li>
+                <li>Printed in black with Alpine Red</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Digital Screen - Horizontal (29th Street)</div>
+              
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The same fonts, color and layout rules as the collateral</li>
+                <li>No imagery</li>
+                <li>White and Alpine Red on black</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Digital Screen - Vertical (University Hill) - Variant 1</div>
+              
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same as the horizontal screen, at vertical</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Digital Screen - Vertical (University Hill) - Variant 2</div>
+              
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same as the horizontal screen, at vertical</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Digital Screen - Vertical (University Hill) - Variant 3</div>
+              
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>Same as the horizontal screen, at vertical</li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="card" id="s07">
+      <div class="section-grid">
+        <div class="rail-number">07</div>
+        <div class="section-body">
+          <h2>Coffee packaging</h2>
+          <p>One bag design. The label color separates the coffees.</p>
+          <div class="rows">
+            <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
+          <div class="row item">
+            <div>
+              <div class="iname">Mountain Blend - Primary Package</div>
+              <div class="icolor">White bag</div>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=26" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-26.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>ALPINE MODERN horizontal on one line</li>
+                <li>The X no larger than concept 3</li>
+                <li>Text the same or slightly larger than concept 1</li>
+                <li>Nothing above the tear line</li>
+                <li>A pixelated mountain in black and grey on the face, the same artwork on both SKUs</li>
+                <li>A pattern element on the gusset if it works</li>
+                <li>Printed interior in place of plain foil</li>
+              </ul>
+              
+              <div class="inote">R1 carried forward.
+                <ul>
+                  <li>Bag design stays locked, only the image varies between reviews</li>
+                  <li>Printed interior reverses the earlier call to leave the inside as plain foil</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Mountain Blend - Secondary Label</div>
+              <div class="icolor">Smoky Quartz (Black)</div>
+              <span class="pill light apr">Approved in Round 1</span>
+            </div>
+            <div>
+              <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=27" target="_blank" rel="noopener">
+                <img src="../../_assets/r1-thumbs/r1-27.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
+                <span class="cap">Round 1</span>
+              </a>
+              <ul class="iart">
+                <li>The concept 1 sticker layout, contents and font</li>
+                <li>Cut to a tag shape instead of a rectangle</li>
+                <li>The same sticker fits the 12oz and the 5lb</li>
+              </ul>
+              <div class="inote">R1 approved the concept 1 sticker for layout, contents and font.
+                <ul>
+                  <li>Two colors to be shown</li>
+                  <li>Tag shape comes from a bag you bought and liked, handmade and off convention</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Espresso SKU - Primary Package</div>
+              <div class="icolor">White bag</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The same bag as Mountain Blend</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">Espresso SKU - Secondary Label</div>
+              <div class="icolor">Deep green</div>
+              
+            </div>
+            <div>
+              <ul class="iart">
+                <li>The same layout as the Mountain Blend label</li>
+                <li>Second of the two colors</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row item">
+            <div>
+              <div class="iname">5lb Bag - Primary Package</div>
+              <div class="icolor">White bag</div>
+              <span class="pill filled apr">Open question</span>
+            </div>
+            <div>
+              <figure class="r1shot photo">
+                <img src="../../_assets/5lb-bag.webp" width="480" height="640" loading="lazy" decoding="async" alt="5lb bag, white">
+                <figcaption class="cap">5lb bag</figcaption>
+              </figure>
+              <ul class="iart">
+                <li>Scaled to the 9.25 inch face when the top is rolled</li>
+                <li>Same sticker</li>
+                <li>Same relationship between ALPINE MODERN and the X</li>
+              </ul>
+              <div class="inote">
+                <ul>
+                  <li>Priced in a separate proposal once a direction is picked for the 12oz bag</li>
+                  <li>Not covered by the current balance</li>
+                  <li class="q">Same design as the 12oz scaled up, or unique artwork?</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="botbar">
+      <svg class="logo" role="img" aria-label="Studio Parkside"><use href="#sp-logo"/></svg>
+      <div class="pill-group">
+        <span class="pill light">Caf&eacute; Collateral</span>
+        <span class="pill meta">Round 1 comments</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>
