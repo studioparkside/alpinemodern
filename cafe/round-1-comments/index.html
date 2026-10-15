@@ -185,6 +185,25 @@
   .ltext{display:flex;flex-direction:column;gap:3px;font-size:17.5px;line-height:1.45;min-width:180px}
   .ltext .lt{font-size:14px;font-weight:600;color:var(--ink-muted);margin-bottom:3px}
 
+  /* ---------- Logo tray ---------- */
+  .logotray{position:fixed;left:16px;right:16px;bottom:16px;z-index:55;margin:0 auto;max-width:1040px;
+    box-sizing:border-box;padding:12px 14px;overflow-x:auto;border:1px solid var(--outline);
+    border-radius:20px;background:var(--glass);
+    -webkit-backdrop-filter:blur(26px) saturate(165%);backdrop-filter:blur(26px) saturate(165%);
+    box-shadow:0 8px 30px rgba(0,0,0,0.10);
+    opacity:0;visibility:hidden;transform:translateY(12px);
+    transition:opacity .25s ease,transform .25s ease,visibility .25s}
+  .logotray.show{opacity:1;visibility:visible;transform:none}
+  @media (prefers-reduced-motion: reduce){ .logotray{transition:none} }
+  @supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+    .logotray{background:var(--glass-solid)}
+  }
+  .logotray-list{display:flex;gap:10px;width:max-content;margin:0 auto}
+  .logotray figure{margin:0;width:100px}
+  .logotray img{display:block;width:100%;height:52px;box-sizing:border-box;padding:9px 11px;
+    object-fit:contain;border:1px solid var(--outline);border-radius:7px;background:var(--neutral-white)}
+  .logotray .cap{display:block;margin-top:5px;font-size:12px;line-height:1.3;color:var(--ink-muted)}
+  body{padding-bottom:160px}
   @media (max-width:860px){
     body{padding:8px;padding-top:calc(var(--header-h) + 8px)}
     .siteheader{padding:0 18px}
@@ -199,6 +218,9 @@
     .thumbgrid{grid-template-columns:repeat(3,1fr);gap:8px}
     .row{grid-template-columns:1fr;gap:12px}
     .iname{font-size:21px}
+    body{padding-bottom:150px}
+    .logotray{left:8px;right:8px;bottom:8px}
+    .logotray figure{width:92px}
   }
   @media print{
     :root{
@@ -208,6 +230,7 @@
       color-scheme:light;
     }
     .siteheader{display:none !important}
+    .logotray{display:none !important}
     .pages{display:none !important}
     body{background:#fff;padding:0;padding-top:0;font-size:11.5pt;line-height:1.45;color:#000}
     .stack{max-width:none;gap:0}
@@ -653,10 +676,6 @@
             </div>
             <div>
               <div class="shots">
-                <a class="r1shot" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf#page=13" target="_blank" rel="noopener">
-                  <img src="../../_assets/r1-thumbs/r1-13.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
-                  <span class="cap">Round 1</span>
-                </a>
                 <figure class="r1shot photo">
                   <img src="../../_assets/photos/exterior-sign-29th.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Photo of the current sign">
                   <figcaption class="cap">Current sign</figcaption>
@@ -665,7 +684,6 @@
               <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
               <ul class="iart">
                 <li>Serif &ldquo;Since 2014&rdquo; below it</li>
-                <li>Painted white</li>
               </ul>
               <div class="inote">
                 <ul>
@@ -789,7 +807,6 @@
               </div>
               <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
-                <li>Painted white</li>
               </ul>
               <div class="inote">
                 <ul>
@@ -832,14 +849,16 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Café message</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Café message</span><span>Address</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN painted across the top in white</li>
+                <li>ALPINE MODERN across the top in white</li>
                 <li>The rest of the board stays open for the café message</li>
+                <li>Includes the address</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li class="q">Café message suggestions?</li>
+                  <li class="q">Include the website too?</li>
                 </ul>
               </div>
             </div>
@@ -858,13 +877,14 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Café message</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Café message</span><span>Address</span></div></div>
               <ul class="iart">
                 <li>Same as Variant 1</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li class="q">Café message suggestions?</li>
+                  <li class="q">Include the website too?</li>
                 </ul>
               </div>
             </div>
@@ -878,7 +898,6 @@
         <div class="rail-number">03</div>
         <div class="section-body">
           <h2>Apparel</h2>
-          <p>Blank colors are as they stand in your spreadsheet.</p>
           <div class="rows">
             <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
           <div class="row item">
@@ -899,7 +918,7 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>Serif tag as in Round 1</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>Serif tag from 03-02, as shown in Round 1</span></div></div>
               <ul class="iart">
                 <li>The buffalo placed in a Boulder setting</li>
                 <li>Serif tag</li>
@@ -911,7 +930,6 @@
                   <li>Tie the buffalo to Boulder or Colorado</li>
                   <li>Different blank than the one shown</li>
                   <li class="q">Faded Pink is the blank on your spreadsheet. Confirm it or pick another?</li>
-                  <li class="q">Suggestions for the serif tag?</li>
                 </ul>
               </div>
             </div>
@@ -940,7 +958,7 @@
               <div class="inote">R1 approved.
                 <ul>
                   <li>Liked the combo of the X and the throwback serif for the tag</li>
-                  <li>Liked orange on coal</li>
+                  <li>Liked red on coal</li>
                 </ul>
               </div>
             </div>
@@ -1216,6 +1234,10 @@
                   <img src="../../_assets/r1-thumbs/r1-23.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
                   <span class="cap">Round 1</span>
                 </a>
+                <a class="r1shot" href="../../_assets/specs/nomad-12oz-spec.jpg" target="_blank" rel="noopener">
+                  <img src="../../_assets/specs/nomad-12oz-spec.jpg" width="2000" height="1125" loading="lazy" decoding="async" alt="12oz Nomad spec sheet">
+                  <span class="cap">Spec sheet</span>
+                </a>
               </div>
               <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
@@ -1236,6 +1258,12 @@
               <span class="pill filled apr">Open question</span>
             </div>
             <div>
+              <div class="shots">
+                <a class="r1shot" href="../../_assets/specs/cold-cup-16oz-spec.jpg" target="_blank" rel="noopener">
+                  <img src="../../_assets/specs/cold-cup-16oz-spec.jpg" width="2000" height="1125" loading="lazy" decoding="async" alt="16oz Cold Cup spec sheet">
+                  <span class="cap">Spec sheet</span>
+                </a>
+              </div>
               <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>Printed in bone</li>
@@ -1479,7 +1507,7 @@
             <div>
               <div class="inum">05-06</div>
               <div class="iname">Event Asset - Instagram Story</div>
-              
+              <span class="pill filled apr">Open question</span>
               
             </div>
             <div>
@@ -1493,7 +1521,13 @@
               <ul class="iart">
                 <li>The post design at vertical</li>
                 <li>Same grid and type sizes</li>
+                <li>One story template</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">Preference on which post becomes the story template?</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="row item">
@@ -1627,7 +1661,6 @@
         <div class="rail-number">07</div>
         <div class="section-body">
           <h2>Coffee packaging</h2>
-          <p>One bag design. The label color separates the coffees.</p>
           <div class="rows">
             <div class="colhead"><span>Deliverable and color</span><span>Artwork and notes</span></div>
           <div class="row item">
@@ -1770,6 +1803,31 @@
 
   </div>
 </main>
+
+<aside class="logotray" id="logotray" aria-label="Logos">
+  <div class="logotray-list">
+    <figure><img src="../../logos/SVG/AM%20Horizontal%20Lockup%20Sans.svg" alt="AM Horizontal Lockup Sans"><figcaption class="cap">AM Horizontal Lockup Sans</figcaption></figure>
+    <figure><img src="../../logos/SVG/AM%20Horizontal%20Logotype%20Sans.svg" alt="AM Horizontal Logotype Sans"><figcaption class="cap">AM Horizontal Logotype Sans</figcaption></figure>
+    <figure><img src="../../logos/SVG/AM%20Stacked%20Lockup%20Sans.svg" alt="AM Stacked Lockup Sans"><figcaption class="cap">AM Stacked Lockup Sans</figcaption></figure>
+    <figure><img src="../../logos/SVG/AM%20Stacked%20Logotype%20Sans.svg" alt="AM Stacked Logotype Sans"><figcaption class="cap">AM Stacked Logotype Sans</figcaption></figure>
+    <figure><img src="../../logos/SVG/AM%20Vertical%20Lockup%20Sans.svg" alt="AM Vertical Lockup Sans"><figcaption class="cap">AM Vertical Lockup Sans</figcaption></figure>
+    <figure><img src="../../logos/SVG/AM%20Icon.svg" alt="AM Icon"><figcaption class="cap">AM Icon</figcaption></figure>
+    <figure><img src="../../logos/SVG/AM%20Horizontal%20Logotype%20Serif.svg" alt="AM Horizontal Logotype Serif"><figcaption class="cap">AM Horizontal Logotype Serif</figcaption></figure>
+    <figure><img src="../../logos/SVG/AM%20Stacked%20Lockup%20Serif.svg" alt="AM Stacked Lockup Serif"><figcaption class="cap">AM Stacked Lockup Serif</figcaption></figure>
+    <figure><img src="../../logos/SVG/AM%20Stacked%20Logotype%20Serif.svg" alt="AM Stacked Logotype Serif"><figcaption class="cap">AM Stacked Logotype Serif</figcaption></figure>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var tray=document.getElementById('logotray');
+  var first=document.getElementById('s01');
+  function update(){tray.classList.toggle('show',first.getBoundingClientRect().top<window.innerHeight-160)}
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
 
 </body>
 </html>
