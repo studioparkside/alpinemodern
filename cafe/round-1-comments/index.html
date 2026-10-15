@@ -172,6 +172,8 @@
   .logoblock{display:flex;flex-wrap:wrap;align-items:flex-start;gap:18px 28px;margin:0 0 18px;
     padding:16px 0 18px;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
   .logos{display:flex;flex-wrap:wrap;gap:14px}
+  .logos + .logos{margin-top:14px}
+  .logoblock + .inote{margin-top:0;padding-top:0;border-top:0}
   .logoph{margin:0;flex:0 1 200px;width:200px}
   .logoph span{display:flex;align-items:center;justify-content:center;height:96px;
     border:1px dashed var(--muted);border-radius:7px;background:#FAFBFB;
@@ -282,9 +284,25 @@
         <p>Everything included in Round 2 is listed below.</p>
         <div class="label">Notes</div>
         <ol class="notelist">
-          <li>Each row shows the recommended logo and the text that appears in the asset.</li>
+          <li>Each row lists the content that appears in the asset.</li>
           <li>Items approved in Round 1 stay as they are.</li>
         </ol>
+        <div class="label">Logos</div>
+        <div class="logos">
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Lockup%20Sans.svg" alt="AM Horizontal Lockup Sans"><figcaption class="cap">AM Horizontal Lockup Sans</figcaption></figure>
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Logotype%20Sans.svg" alt="AM Horizontal Logotype Sans"><figcaption class="cap">AM Horizontal Logotype Sans</figcaption></figure>
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Stacked%20Lockup%20Sans.svg" alt="AM Stacked Lockup Sans"><figcaption class="cap">AM Stacked Lockup Sans</figcaption></figure>
+        </div>
+        <div class="logos">
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Stacked%20Logotype%20Sans.svg" alt="AM Stacked Logotype Sans"><figcaption class="cap">AM Stacked Logotype Sans</figcaption></figure>
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Lockup%20Sans.svg" alt="AM Vertical Lockup Sans"><figcaption class="cap">AM Vertical Lockup Sans</figcaption></figure>
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Icon.svg" alt="AM Icon"><figcaption class="cap">AM Icon</figcaption></figure>
+        </div>
+        <div class="logos">
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Logotype%20Serif.svg" alt="AM Horizontal Logotype Serif"><figcaption class="cap">AM Horizontal Logotype Serif</figcaption></figure>
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Stacked%20Lockup%20Serif.svg" alt="AM Stacked Lockup Serif"><figcaption class="cap">AM Stacked Lockup Serif</figcaption></figure>
+          <figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Stacked%20Logotype%20Serif.svg" alt="AM Stacked Logotype Serif"><figcaption class="cap">AM Stacked Logotype Serif</figcaption></figure>
+        </div>
         <a class="filelink wide" href="../../_assets/Alpine%20Modern%20Caf%C3%A9%20Items%20R1.pdf" target="_blank" rel="noopener"><span>Round 1 concepts</span><span class="ar" aria-hidden="true">&#8599;</span></a>
         <details class="pages">
           <summary><span>Round 1 pages</span><svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5 6 8.5 10 4.5"/></svg></summary>
@@ -378,6 +396,7 @@
               <div class="inum">01-01</div>
               <div class="iname">Hot Cup - 8oz</div>
               <div class="icolor">White cup, up to two colors</div>
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -390,10 +409,9 @@
                   <span class="cap">Mood board</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
               <ul class="iart">
                 <li>Copy set in stacked blocks, the way the mood boards treated type</li>
-                <li>ALPINE MODERN on one line, the X small</li>
                 <li>Serif &ldquo;Quality Coffee&rdquo; tag</li>
                 <li>Printed in Alpine Red and black</li>
                 <li>Two designs to look at</li>
@@ -403,6 +421,7 @@
                   <li>Reference mood board: layout grid, content blocks</li>
                   <li>White cup</li>
                   <li>One design on every size</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -415,7 +434,7 @@
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
               <ul class="iart">
                 <li>Same design as the 8oz</li>
               </ul>
@@ -434,7 +453,7 @@
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
               <ul class="iart">
                 <li>Same design as the 8oz</li>
               </ul>
@@ -453,7 +472,7 @@
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
               <ul class="iart">
                 <li>Same design as the 8oz</li>
               </ul>
@@ -469,6 +488,7 @@
               <div class="inum">01-05</div>
               <div class="iname">Cold Cup - 12oz</div>
               <div class="icolor">Clear cup, two colors</div>
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -477,15 +497,15 @@
                   <span class="cap">Mood board</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
               <ul class="iart">
                 <li>The hot cup design, reversed</li>
                 <li>Printed in white and Alpine Red</li>
-                <li>ALPINE MODERN on one line, the X small</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li>One design on every size</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -498,7 +518,7 @@
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
               <ul class="iart">
                 <li>Same design as the 12oz</li>
               </ul>
@@ -512,7 +532,7 @@
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Quality Coffee</span></div></div>
               <ul class="iart">
                 <li>Same design as the 12oz</li>
               </ul>
@@ -523,17 +543,22 @@
               <div class="inum">01-08</div>
               <div class="iname">Deli Paper</div>
               <div class="icolor">White</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN stepped and repeated on one line, floating on an implied grid with linear elements</li>
+                <li>ALPINE MODERN stepped and repeated, floating on an implied grid with linear elements</li>
                 <li>Printed in Alpine Red</li>
                 <li>May borrow icons from the tote and the cup design</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">Which logo do you want to use?</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="row item">
@@ -541,16 +566,20 @@
               <div class="inum">01-09</div>
               <div class="iname">Pastry Bag</div>
               <div class="icolor">White</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Type.svg" alt="Alpine Modern logo, stacked, type only"><figcaption class="cap">Stacked, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN on one line</li>
                 <li>Serif &ldquo;Since 2014&rdquo; below it</li>
                 <li>Printed in Alpine Red</li>
                 <li>Can carry the deli paper pattern and play a little more, with a name and a small icon</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">Which logo do you want to use?</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="row item">
@@ -567,7 +596,6 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>The Round 1 design</li>
                 <li>X reduced so it sits with the type instead of dominating the face</li>
@@ -586,18 +614,22 @@
               <div class="inum">01-11</div>
               <div class="iname">Coffee Sleeve</div>
               <div class="icolor">White</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>A simple, bold design that works over the cup design wherever it sits</li>
                 <li>Alpine Red on white</li>
                 <li>No fine detail</li>
               </ul>
-              <div class="inote">New design.</div>
+              <div class="inote">New design.
+                <ul>
+                  <li class="q">Which logo do you want to use?</li>
+                </ul>
+              </div>
             </div>
           </div>
           </div>
@@ -615,8 +647,8 @@
             <div>
               <div class="inum">02-01</div>
               <div class="iname">Exterior Logo Sign - Variant 1 (29th Street)</div>
-              <div class="icolor">Black</div>
-              <span class="pill light apr">Approved in Round 1</span>
+              <div class="icolor">White</div>
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -624,16 +656,20 @@
                   <img src="../../_assets/r1-thumbs/r1-13.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
                   <span class="cap">Round 1</span>
                 </a>
+                <figure class="r1shot photo">
+                  <img src="../../_assets/photos/exterior-sign-29th.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Photo of the current sign">
+                  <figcaption class="cap">Current sign</figcaption>
+                </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN with the serif &ldquo;Since 2014&rdquo; underneath it</li>
-                <li>Nothing above</li>
+                <li>Serif &ldquo;Since 2014&rdquo; below it</li>
                 <li>Painted white</li>
               </ul>
-              <div class="inote">R1 approved with one edit.
+              <div class="inote">
                 <ul>
-                  <li>Serif on the bottom only</li>
+                  <li>Text on the bottom only</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -642,8 +678,8 @@
             <div>
               <div class="inum">02-02</div>
               <div class="iname">Exterior Logo Sign - Variant 2 (University Hill)</div>
-              <div class="icolor">Black</div>
-              
+              <div class="icolor">White</div>
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -652,13 +688,10 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
-              <ul class="iart">
-                <li>Same as Variant 1</li>
-              </ul>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
               <div class="inote">
                 <ul>
-                  <li>Same note as Variant 1</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -667,7 +700,7 @@
             <div>
               <div class="inum">02-03</div>
               <div class="iname">Window Logo Decal - Variant 1 (29th Street)</div>
-              <div class="icolor">White</div>
+              <div class="icolor">Clear</div>
             </div>
             <div>
               <div class="shots">
@@ -675,10 +708,14 @@
                   <img src="../../_assets/r1-thumbs/r1-12.webp" width="320" height="180" loading="lazy" decoding="async" alt="Round 1 concept">
                   <span class="cap">Round 1</span>
                 </a>
+                <figure class="r1shot photo">
+                  <img src="../../_assets/photos/window-decal-29th.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Photo of the current decal">
+                  <figcaption class="cap">Current decal</figcaption>
+                </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
+              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Lockup%20Sans.svg" alt="AM Vertical Lockup Sans"><figcaption class="cap">AM Vertical Lockup Sans</figcaption></figure></div><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
               <ul class="iart">
-                <li>The stacked lockup</li>
+                <li>Serif &ldquo;Since 2014&rdquo; below it</li>
               </ul>
               <div class="inote">
                 <ul>
@@ -691,7 +728,7 @@
             <div>
               <div class="inum">02-04</div>
               <div class="iname">Window Logo Decal - Variant 2 (University Hill)</div>
-              <div class="icolor">White</div>
+              <div class="icolor">Clear</div>
             </div>
             <div>
               <div class="shots">
@@ -700,7 +737,7 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
+              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Lockup%20Sans.svg" alt="AM Vertical Lockup Sans"><figcaption class="cap">AM Vertical Lockup Sans</figcaption></figure></div><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
               <ul class="iart">
                 <li>Same as Variant 1</li>
               </ul>
@@ -710,14 +747,13 @@
             <div>
               <div class="inum">02-05</div>
               <div class="iname">Window Message Decal - Variant 1</div>
-              <div class="icolor">White</div>
+              <div class="icolor">Clear</div>
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>Quality coffee since 2014</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>Quality coffee since 2014</span></div></div>
               <ul class="iart">
-                <li>A brand message on a white window cling</li>
-                <li>ALPINE MODERN small below the message</li>
+                <li>A brand message on a clear window cling</li>
                 <li>No imagery</li>
               </ul>
             </div>
@@ -726,11 +762,11 @@
             <div>
               <div class="inum">02-06</div>
               <div class="iname">Window Message Decal - Variant 2</div>
-              <div class="icolor">White</div>
+              <div class="icolor">Clear</div>
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>Your neighborhood coffee shop since 2014</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>Your neighborhood coffee shop since 2014</span></div></div>
               <ul class="iart">
                 <li>A second message on the same layout</li>
               </ul>
@@ -741,7 +777,7 @@
               <div class="inum">02-07</div>
               <div class="iname">Sidewalk Logo Board - Variant 1 (29th Street)</div>
               <div class="icolor">Black board</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -750,12 +786,15 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN centered on one line</li>
-                <li>The X above it at small size</li>
                 <li>Painted white</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">Which logo do you want to use?</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="row item">
@@ -772,7 +811,7 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>Same as Variant 1</li>
               </ul>
@@ -783,7 +822,7 @@
               <div class="inum">02-09</div>
               <div class="iname">Sidewalk Message Board - Variant 1 (29th Street)</div>
               <div class="icolor">Black board</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -792,11 +831,16 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Daily message</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Café message</span></div></div>
               <ul class="iart">
                 <li>ALPINE MODERN painted across the top in white</li>
-                <li>The rest of the board stays open for the daily message</li>
+                <li>The rest of the board stays open for the café message</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">What would you like the café message to say?</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="row item">
@@ -804,7 +848,7 @@
               <div class="inum">02-10</div>
               <div class="iname">Sidewalk Message Board - Variant 2 (University Hill)</div>
               <div class="icolor">Black board</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -813,10 +857,15 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Daily message</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Café message</span></div></div>
               <ul class="iart">
                 <li>Same as Variant 1</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">What would you like the café message to say?</li>
+                </ul>
+              </div>
             </div>
           </div>
           </div>
@@ -849,7 +898,7 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20X.svg" alt="Alpine Modern X mark"><figcaption class="cap">X only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>Serif tag as in Round 1</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>Serif tag as in Round 1</span></div></div>
               <ul class="iart">
                 <li>The buffalo placed in a Boulder setting</li>
                 <li>Serif tag</li>
@@ -883,7 +932,6 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20X.svg" alt="Alpine Modern X mark"><figcaption class="cap">X only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>Serif tag as in Round 1</span></div></div>
               <ul class="iart">
                 <li>No changes</li>
               </ul>
@@ -900,6 +948,7 @@
               <div class="inum">03-03</div>
               <div class="iname">T Shirt - Variant 3 (Heavy Faded Minus Tee)</div>
               <div class="icolor">Faded Olive</div>
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -912,10 +961,9 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Type.svg" alt="Alpine Modern logo, stacked, type only"><figcaption class="cap">Stacked, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Since 2014</span><span>Quality Coffee</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Since 2014</span><span>Quality Coffee</span></div></div>
               <ul class="iart">
                 <li>The &ldquo;Since 2014&rdquo; and &ldquo;Quality Coffee&rdquo; icons</li>
-                <li>ALPINE MODERN spelled out</li>
                 <li>No mountain scene</li>
                 <li>Printed in bone</li>
               </ul>
@@ -925,6 +973,7 @@
                   <li>Mountain scene was not working</li>
                   <li>AM cannot be the central element</li>
                   <li>Open on every axis including the copy</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -934,7 +983,7 @@
               <div class="inum">03-04</div>
               <div class="iname">Sweatshirt</div>
               <div class="icolor">Bone</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -943,15 +992,15 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN on one line</li>
                 <li>Embroidered on the left chest</li>
                 <li>Thread that matches the blank</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li>Your note: simple, elevated embroidery</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -970,9 +1019,9 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20X.svg" alt="Alpine Modern X mark"><figcaption class="cap">X only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>None</span></div></div>
+              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Icon.svg" alt="AM Icon"><figcaption class="cap">AM Icon</figcaption></figure></div><div class="ltext"><span class="lt">Content</span><span>None</span></div></div>
               <ul class="iart">
-                <li>The X embroidered small and centered on the foam front panel</li>
+                <li>AM Icon embroidered small and centered on the foam front panel</li>
                 <li>In bone thread</li>
               </ul>
               <div class="inote">
@@ -987,7 +1036,7 @@
               <div class="inum">03-06</div>
               <div class="iname">Frame Hat</div>
               <div class="icolor">Walnut</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -996,14 +1045,15 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN embroidered across the front on one line</li>
+                <li>Logo embroidered across the front</li>
                 <li>In bone thread</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li>Your note: embroidery</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -1013,7 +1063,7 @@
               <div class="inum">03-07</div>
               <div class="iname">Corduroy Hat</div>
               <div class="icolor">Moonstone</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -1022,16 +1072,17 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Since 2014</span></div></div>
               <ul class="iart">
                 <li>A woven patch</li>
-                <li>ALPINE MODERN on one line with the serif &ldquo;Since 2014&rdquo; under it</li>
+                <li>Logo with the serif &ldquo;Since 2014&rdquo; under it</li>
                 <li>In Alpine Red and bone</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li>Round 2 swap, replacing one fashion accessory</li>
                   <li>Patch or embroidery</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -1050,7 +1101,6 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20X.svg" alt="Alpine Modern X mark"><figcaption class="cap">X only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>None</span></div></div>
               <ul class="iart">
                 <li>No changes</li>
               </ul>
@@ -1066,7 +1116,7 @@
               <div class="inum">03-09</div>
               <div class="iname">Fashion Accessories - Beanie</div>
               <div class="icolor">Walnut</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -1075,11 +1125,16 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
-                <li>A woven label with ALPINE MODERN on one line</li>
+                <li>A woven label with the logo</li>
                 <li>In bone</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">Which logo do you want to use?</li>
+                </ul>
+              </div>
             </div>
           </div>
           </div>
@@ -1107,7 +1162,6 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img src="../../_assets/r1-thumbs/r1-21.webp" alt="Round 1 design"><figcaption class="cap">Round 1 design</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>As shown in Round 1</span></div></div>
               <ul class="iart">
                 <li>No changes</li>
               </ul>
@@ -1123,6 +1177,7 @@
               <div class="inum">04-02</div>
               <div class="iname">Drinkware - 8oz Nomad w/ Flip Lid</div>
               <div class="icolor">White</div>
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -1131,9 +1186,9 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN wrapping on one line</li>
+                <li>Logo wrapping around the cup</li>
                 <li>No monogram</li>
                 <li>Printed in Alpine Red</li>
               </ul>
@@ -1141,6 +1196,7 @@
               <div class="inote">
                 <ul>
                   <li>R1 note: stay away from AM or variations as a primary branding element</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -1159,7 +1215,7 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>Same as the 8oz, printed in bone</li>
               </ul>
@@ -1175,18 +1231,17 @@
               <div class="inum">04-04</div>
               <div class="iname">Drinkware - 16oz Cold Cup</div>
               <div class="icolor">Rain</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
-                <li>ALPINE MODERN on one line</li>
-                <li>The X small beneath it</li>
                 <li>Printed in bone</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li>Round 2 swap, replacing one tote design</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -1205,7 +1260,6 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img src="../../_assets/r1-thumbs/r1-22.webp" alt="Round 1 design"><figcaption class="cap">Round 1 design</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>As shown in Round 1</span></div></div>
               <ul class="iart">
                 <li>The Round 1 design</li>
                 <li>If it stays in, it follows the new hot cup direction</li>
@@ -1236,10 +1290,10 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>The Round 1 design</li>
-                <li>ALPINE MODERN spelled out in place of AM</li>
+                <li>ALPINE MODERN in place of the AM monogram</li>
                 <li>Printed in Alpine Red</li>
               </ul>
               <div class="inote">R1 approved with one edit.
@@ -1268,10 +1322,10 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>The R1 bandana grid embroidered across the lower face</li>
-                <li>ALPINE MODERN above it</li>
+                <li>Logo above the grid</li>
                 <li>In bone thread</li>
               </ul>
               <div class="inote">
@@ -1279,6 +1333,7 @@
                   <li>Goal is high quality at a higher price point</li>
                   <li class="q">You mentioned liking the symbols on the Round 1 tote. Is that the design you'd like carried here?</li>
                   <li class="q">Can your embroiderer stitch the grid at a size large enough to fit the tote?</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -1312,7 +1367,6 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>As shown in Round 1</span></div></div>
               <ul class="iart">
                 <li>No changes</li>
               </ul>
@@ -1328,15 +1382,20 @@
               <div class="inum">05-02</div>
               <div class="iname">In-store Poster</div>
               <div class="icolor">White</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>Headline</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>Headline</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>One headline running across the top</li>
-                <li>ALPINE MODERN along the bottom edge</li>
+                <li>Logo along the bottom edge</li>
                 <li>Printed in Alpine Red and black</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">Which logo do you want to use?</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="row item">
@@ -1344,19 +1403,20 @@
               <div class="inum">05-03</div>
               <div class="iname">Free Beverage Card</div>
               <div class="icolor">White</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>Enjoy a 12oz Beverage on us (front)</span><span>ALPINE MODERN (back)</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>Enjoy a 12oz Beverage on us (front)</span><span>ALPINE MODERN (back)</span></div></div>
               <ul class="iart">
                 <li>2.5x2.5</li>
                 <li>&ldquo;Enjoy a 12oz Beverage on us&rdquo; on the front</li>
-                <li>ALPINE MODERN on the back</li>
+                <li>Logo on the back</li>
                 <li>Printed in Alpine Red</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li>Round 2 swap, replacing the direct mail postcard</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -1366,7 +1426,7 @@
               <div class="inum">05-04</div>
               <div class="iname">Merch Sign</div>
               <div class="icolor">White</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -1375,16 +1435,17 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Merch list</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Merch list</span></div></div>
               <ul class="iart">
                 <li>The merch list in one column</li>
                 <li>A hairline between each item</li>
-                <li>ALPINE MODERN at the top</li>
+                <li>Logo at the top</li>
                 <li>Printed in black</li>
               </ul>
               <div class="inote">
                 <ul>
                   <li>Round 2 swap, replacing the sign tag</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
               </div>
             </div>
@@ -1403,7 +1464,6 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>As shown in Round 1</span></div></div>
               <ul class="iart">
                 <li>No changes</li>
               </ul>
@@ -1425,7 +1485,7 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>As shown in Round 1</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>As shown in Round 1</span></div></div>
               <ul class="iart">
                 <li>The post design at vertical</li>
                 <li>Same grid and type sizes</li>
@@ -1446,7 +1506,7 @@
                   <figcaption class="cap">Product</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>Headline</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>Headline</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>The poster layout at A5</li>
               </ul>
@@ -1468,31 +1528,41 @@
               <div class="inum">06-01</div>
               <div class="iname">Universal Print Menu</div>
               <div class="icolor">White</div>
-              
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>The same fonts, color and layout rules as the collateral</li>
                 <li>No imagery</li>
                 <li>Printed in black with Alpine Red</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">Do you have a preference on which logo to use?</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="row item">
             <div>
               <div class="inum">06-02</div>
               <div class="iname">Digital Screen - Horizontal (29th Street)</div>
-              
+              <span class="pill filled apr">Open question</span>
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Type.svg" alt="Alpine Modern logo, horizontal, type only"><figcaption class="cap">Horizontal, type only</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>The same fonts, color and layout rules as the collateral</li>
                 <li>No imagery</li>
                 <li>White and Alpine Red on black</li>
               </ul>
+              <div class="inote">
+                <ul>
+                  <li class="q">Do you have a preference on which logo to use?</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="row item">
@@ -1503,7 +1573,7 @@
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Type.svg" alt="Alpine Modern logo, stacked, type only"><figcaption class="cap">Stacked, type only</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>Same as the horizontal screen, at vertical</li>
               </ul>
@@ -1517,7 +1587,7 @@
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Type.svg" alt="Alpine Modern logo, stacked, type only"><figcaption class="cap">Stacked, type only</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>Same as the horizontal screen, at vertical</li>
               </ul>
@@ -1531,7 +1601,7 @@
               
             </div>
             <div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Type.svg" alt="Alpine Modern logo, stacked, type only"><figcaption class="cap">Stacked, type only</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Vertical%20Icon.svg" alt="Alpine Modern logo, stacked, x above"><figcaption class="cap">Stacked, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span></div></div>
               <ul class="iart">
                 <li>Same as the horizontal screen, at vertical</li>
               </ul>
@@ -1554,6 +1624,7 @@
               <div class="inum">07-01</div>
               <div class="iname">Mountain Blend - Primary Package and Secondary Label</div>
               <div class="icolor">White bag, Smoky Quartz (Black) label</div>
+              <span class="pill filled apr">Open question</span>
             </div>
             <div>
               <div class="shots">
@@ -1570,7 +1641,7 @@
                   <span class="cap">Mood board</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Label contents as on the concept 1 sticker</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Label contents as on the concept 1 sticker</span></div></div>
               <ul class="iart">
                 <li>ALPINE MODERN horizontal on one line</li>
                 <li>The X no larger than concept 3</li>
@@ -1590,6 +1661,7 @@
                   <li>R1 approved the concept 1 sticker for layout, contents and font</li>
                   <li>Two label colors to be shown</li>
                   <li>Tag shape inspired by the Little Wolf sample</li>
+                  <li class="q">Which logo do you want to use?</li>
                 </ul>
                 <div class="shots inote-shots">
                   <figure class="r1shot photo">
@@ -1629,7 +1701,7 @@
                   <span class="cap">Round 1</span>
                 </a>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Label contents as on the concept 1 sticker</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Label contents as on the concept 1 sticker</span></div></div>
               <ul class="iart">
                 <li>The same bag and label as Mountain Blend</li>
                 <li>Label in deep green, the second of the two colors</li>
@@ -1654,7 +1726,7 @@
                   <figcaption class="cap">5lb bag</figcaption>
                 </figure>
               </div>
-              <div class="logoblock"><div class="logos"><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%202.svg" alt="Alpine Modern logo, horizontal, x inline"><figcaption class="cap">Horizontal, X inline</figcaption></figure><figure class="logoph"><img class="mark" src="../../logos/SVG/AM%20Horizontal%20Icon%201.svg" alt="Alpine Modern logo, horizontal, x above"><figcaption class="cap">Horizontal, X above</figcaption></figure></div><div class="ltext"><span class="lt">Text</span><span>ALPINE MODERN</span><span>Label contents as on the concept 1 sticker</span></div></div>
+              <div class="logoblock"><div class="ltext"><span class="lt">Content</span><span>ALPINE MODERN</span><span>Label contents as on the concept 1 sticker</span></div></div>
               <ul class="iart">
                 <li>Same design as the 12oz scaled up, or unique artwork?</li>
               </ul>
